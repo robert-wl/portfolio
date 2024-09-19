@@ -1,10 +1,12 @@
 import { type MouseEvent, type ReactNode, useState } from "react";
+import { cn } from "src/utils/class-name";
 
 interface IProps {
   children: ReactNode;
+  className?: string;
 }
 
-export default function NavbarContainer({ children }: IProps) {
+export default function NavbarContainer({ children, className }: IProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
@@ -18,7 +20,7 @@ export default function NavbarContainer({ children }: IProps) {
 
   return (
     <div
-      className="relative bg-[#141120] flex-1 rounded-xl border border-[#33313d] p-4 overflow-hidden"
+      className={cn(className, "relative overflow-hidden")}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -34,7 +36,7 @@ export default function NavbarContainer({ children }: IProps) {
             background: "rgba(64, 224, 208, 0.3)",
             filter: "blur(100px)",
             transform: "translate(-0%, -0%)",
-            zIndex: 10, // Ensure the effect is on top
+            zIndex: 10,
             willChange: "transform, top, left",
           }}
         />

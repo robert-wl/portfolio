@@ -8,6 +8,7 @@ export default {
       },
       backgroundColor: {
         primary: "#2d323d",
+        background: "#212832",
       },
       borderColor: {
         primary: "#00ADB4",
