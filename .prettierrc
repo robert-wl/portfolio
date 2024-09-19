@@ -6,7 +6,7 @@
   "experimentalTernaries": false,
   "singleQuote": false,
   "jsxSingleQuote": false,
-  "quoteProps": "preserve"
+  "quoteProps": "as-needed",
   "trailingComma": "all",
   "singleAttributePerLine": true,
   "htmlWhitespaceSensitivity": "css",
@@ -18,4 +18,13 @@
   "tabWidth": 2,
   "useTabs": false,
   "embeddedLanguageFormatting": "auto",
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }
