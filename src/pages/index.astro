@@ -1,10 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/astro/Navbar.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Home Page">
-  <main class="w-full h-full min-w-[100vw] min-h-[100vh] bg-background">
+  <main class="flex flex-col items-center w-full h-full min-w-[100vw] min-h-[100vh] bg-background">
     <Navbar />
+    <div class="flex flex-col w-3/4">
+      <section class="flex">
+        <div class="flex flex-col">
+          <h2 class="text-4xl font-bold text-white">Hello, my name is</h2>
+          <h1 class="text-6xl font-bold name-gradient drop-shadow-primary">Lorem Ipsum</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="flex flex-col">
+          <Image
+            class="rounded-full aspect-square object-cover"
+            width="500" 
+            height="500" 
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt="Temporary Image"
+          />
+        </div>
+      </section>
+    </div>
   </main>
 </Layout>
+
+<style>
+  .name-gradient {
+    background: linear-gradient(to bottom, #37b7c3, #088395);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+</style>

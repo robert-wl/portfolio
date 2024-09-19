@@ -16,6 +16,9 @@ export default {
       boxShadow: {
         "primary-shiny": "0 0 32px rgba(0, 173, 180, 0.5)",
       },
+      dropShadow: {
+        primary: "0 0 32px rgba(0, 173, 180, 0.5)",
+      },
     },
   },
   plugins: [],
