@@ -7,6 +7,11 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import ExpertiseCard from "src/components/astro/home/ExpertiseCard.astro";
 import LocationIcon from "src/components/astro/icons/LocationIcon.astro";
+import LinkedInIcon from "src/components/astro/icons/LinkedInIcon.astro";
+import EmailFilledIcon from "src/components/astro/icons/EmailFilledIcon.astro";
+import GithubIcon from "src/components/astro/icons/GithubIcon.astro";
+
+
 
 interface IExpertise {
   title: string;
@@ -90,34 +95,49 @@ const expertiseData: IExpertise[] = [
           </div>
         </div>
       </section>
-      <section class="flex flex-col items-center min-h-[100vh] h-[100vh] gap-12">
+      <footer class="flex flex-col items-center gap-12 py-16">
         <h3 class="text-white text-4xl font-semibold">Let's Get In Touch</h3>
         <div class="flex px-32 items-center justify-center gap-32">
           <div class="w-1/2 text-white text-2xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa, illo eos eaque possimus doloribus voluptatem blanditiis reiciendis nulla quo deleniti nostrum doloremque
           </div>
           <div class="flex flex-col w-1/2 gap-8">
-              <div class='flex gap-4'>
+              <div class='flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit'>
                 <EmailIcon />
-                <span class="text-white text-xl">
+                <span class="text-xl">
                   robert.wiliam12345@gmail.com
                 </span>
               </div>
-              <div class='flex gap-4'>
+              <div class='flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit'>
                 <WhatsappIcon />
-                <span class="text-white text-xl">
+                <span class="text-xl">
                   +62 878-8898-8754
                 </span>
               </div>
-              <div class='flex gap-4'>
+              <div class='flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit'>
                 <LocationIcon />
-                <span class="text-white text-xl">
+                <span class="text-xl">
                   Jakarta, Indonesia
                 </span>
               </div>
           </div>
         </div>  
-      </section>
+        <div class="flex flex-col items-center gap-8 pt-16">
+            <div class="flex gap-4">
+                <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
+                    <LinkedInIcon />
+                </div>
+                <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
+                    <EmailFilledIcon />
+                </div>
+                <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
+                    <GithubIcon />
+                </div>
+            </div>
+            <div class="font-roboto-mono text-[#606368]">
+                Built by Robert Wiliam
+            </div>
+        </div>
     </div>
   </main>
 </Layout>
@@ -149,4 +169,23 @@ const expertiseData: IExpertise[] = [
   .button-animation:hover::after {
     transform: scaleX(1);
   }
+
+  .contact-animation::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -20%;
+    width: 100%;
+    height: 3px;
+    background-color: #00adb4;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    z-index: 0;
+  }
+
+  .contact-animation:hover::after {
+    transform: scaleX(1);
+  }
+
 </style>
