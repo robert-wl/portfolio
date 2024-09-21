@@ -10,6 +10,9 @@ export default {
         primary: "#2d323d",
         background: "#212832",
       },
+      textColor: {
+        primary: "#00ADB4",
+      },
       borderColor: {
         primary: "#00ADB4",
       },
@@ -19,6 +22,9 @@ export default {
       dropShadow: {
         primary: "0 0 32px rgba(0, 173, 180, 0.5)",
       },
+      animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+      }
     },
   },
   plugins: [],

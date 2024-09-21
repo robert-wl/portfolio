@@ -57,6 +57,7 @@ const { title } = Astro.props;
   html {
     font-family: system-ui, sans-serif;
     background: #13151a;
+    overflow-x: hidden;
   }
 
   code {
@@ -73,5 +74,17 @@ const { title } = Astro.props;
 
   * {
     font-family: "Inter", sans-serif;
+  }
+
+  @keyframes wiggle {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 </style>
