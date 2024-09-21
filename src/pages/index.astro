@@ -11,37 +11,28 @@ import LinkedInIcon from "src/components/astro/icons/LinkedInIcon.astro";
 import EmailFilledIcon from "src/components/astro/icons/EmailFilledIcon.astro";
 import GithubIcon from "src/components/astro/icons/GithubIcon.astro";
 
-
-
 interface IExpertise {
   title: string;
   description: string;
 }
 
-
 const expertiseData: IExpertise[] = [
   {
     title: "Frontend Development",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
   },
   {
     title: "Frontend Development",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
   },
   {
     title: "Frontend Development",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
   },
-]
-
-
-
-
-
-
-
-
-
+];
 ---
 
 <Layout title="Home Page">
@@ -75,17 +66,15 @@ const expertiseData: IExpertise[] = [
         <h3 class="text-white text-4xl font-semibold">My Expertise</h3>
         <div class="flex gap-8 pt-16 pb-8">
           {
-            expertiseData.map(expertise => {
+            expertiseData.map((expertise) => {
               return (
-              <ExpertiseCard title={expertise.title}>
-              <div class="text-white">
-                {expertise.description}
-              </div>    
-            </ExpertiseCard> 
+                <ExpertiseCard title={expertise.title}>
+                  <div class="text-white">{expertise.description}</div>
+                </ExpertiseCard>
               );
             })
           }
-        </div> 
+        </div>
         <div class="flex w-full justify-end">
           <div class="flex justify-center group items-center gap-2 font-light arrow-animation cursor-pointer">
             <span class="text-xl text-white">Learn more about my expertise</span>
@@ -99,93 +88,84 @@ const expertiseData: IExpertise[] = [
         <h3 class="text-white text-4xl font-semibold">Let's Get In Touch</h3>
         <div class="flex px-32 items-center justify-center gap-32">
           <div class="w-1/2 text-white text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa, illo eos eaque possimus doloribus voluptatem blanditiis reiciendis nulla quo deleniti nostrum doloremque
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa, illo eos eaque possimus doloribus voluptatem blanditiis reiciendis
+            nulla quo deleniti nostrum doloremque
           </div>
           <div class="flex flex-col w-1/2 gap-8">
-              <div class='flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit'>
-                <EmailIcon />
-                <span class="text-xl">
-                  robert.wiliam12345@gmail.com
-                </span>
-              </div>
-              <div class='flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit'>
-                <WhatsappIcon />
-                <span class="text-xl">
-                  +62 878-8898-8754
-                </span>
-              </div>
-              <div class='flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit'>
-                <LocationIcon />
-                <span class="text-xl">
-                  Jakarta, Indonesia
-                </span>
-              </div>
+            <div class="flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit">
+              <EmailIcon />
+              <span class="text-xl"> robert.wiliam12345@gmail.com </span>
+            </div>
+            <div class="flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit">
+              <WhatsappIcon />
+              <span class="text-xl"> +62 878-8898-8754 </span>
+            </div>
+            <div class="flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit">
+              <LocationIcon />
+              <span class="text-xl"> Jakarta, Indonesia </span>
+            </div>
           </div>
-        </div>  
-        <div class="flex flex-col items-center gap-8 pt-16">
-            <div class="flex gap-4">
-                <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
-                    <LinkedInIcon />
-                </div>
-                <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
-                    <EmailFilledIcon />
-                </div>
-                <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
-                    <GithubIcon />
-                </div>
-            </div>
-            <div class="font-roboto-mono text-[#606368]">
-                Built by Robert Wiliam
-            </div>
         </div>
+        <div class="flex flex-col items-center justify-center gap-8 pt-16">
+          <div class="flex gap-4">
+            <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
+              <LinkedInIcon />
+            </div>
+            <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
+              <EmailFilledIcon />
+            </div>
+            <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
+              <GithubIcon />
+            </div>
+          </div>
+          <div class="font-roboto-mono text-center text-[#606368]">Built by Robert Wiliam</div>
+        </div>
+      </footer>
     </div>
   </main>
+
+  <style>
+    .name-gradient {
+      background: linear-gradient(to bottom, #37b7c3, #088395);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .button-animation::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #00adb4;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+      z-index: 0;
+    }
+
+    .button-animation:hover::after {
+      transform: scaleX(1);
+    }
+
+    .contact-animation::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -20%;
+      width: 100%;
+      height: 3px;
+      background-color: #00adb4;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+      z-index: 0;
+    }
+
+    .contact-animation:hover::after {
+      transform: scaleX(1);
+    }
+  </style>
 </Layout>
-
-
-
-<style>
-  .name-gradient {
-    background: linear-gradient(to bottom, #37b7c3, #088395);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-
-  .button-animation::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #00adb4;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-    z-index: 0;
-  }
-
-  .button-animation:hover::after {
-    transform: scaleX(1);
-  }
-
-  .contact-animation::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -20%;
-    width: 100%;
-    height: 3px;
-    background-color: #00adb4;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-    z-index: 0;
-  }
-
-  .contact-animation:hover::after {
-    transform: scaleX(1);
-  }
-
-</style>
