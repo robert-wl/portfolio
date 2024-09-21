@@ -1,5 +1,6 @@
 ---
 import Navbar from "src/components/astro/Navbar.astro";
+import Footer from "src/components/astro/Footer.astro";
 import ArrowIcon from "src/components/astro/icons/ArrowIcon.astro";
 import EmailIcon from "src/components/astro/icons/EmailIcon.astro";
 import WhatsappIcon from "src/components/astro/icons/WhatsappIcon.astro";
@@ -84,7 +85,7 @@ const expertiseData: IExpertise[] = [
           </div>
         </div>
       </section>
-      <footer class="flex flex-col items-center gap-12 py-16">
+      <section class="flex flex-col items-center gap-12 py-16">
         <h3 class="text-white text-4xl font-semibold">Let's Get In Touch</h3>
         <div class="flex px-32 items-center justify-center gap-32">
           <div class="w-1/2 text-white text-2xl">
@@ -92,15 +93,15 @@ const expertiseData: IExpertise[] = [
             nulla quo deleniti nostrum doloremque
           </div>
           <div class="flex flex-col w-1/2 gap-8">
-            <div class="flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit">
+            <div class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <EmailIcon />
               <span class="text-xl"> robert.wiliam12345@gmail.com </span>
             </div>
-            <div class="flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit">
+            <div class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <WhatsappIcon />
               <span class="text-xl"> +62 878-8898-8754 </span>
             </div>
-            <div class="flex gap-4 relative contact-animation transition-colors text-white fill-white hover:fill-primary hover:text-primary w-fit">
+            <div class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <LocationIcon />
               <span class="text-xl"> Jakarta, Indonesia </span>
             </div>
@@ -118,9 +119,9 @@ const expertiseData: IExpertise[] = [
               <GithubIcon />
             </div>
           </div>
-          <div class="font-roboto-mono text-center text-[#606368]">Built by Robert Wiliam</div>
         </div>
-      </footer>
+      </section>
+      <Footer />
     </div>
   </main>
 

@@ -16,8 +16,8 @@ const pages = [
 ---
 
 <div
-  class="flex fixed top-8 bg-primary shadow-primary-shiny text-primary shadow-primary text-white py-4 px-10 justify-between w-96 border-primary border rounded-full">
-  {pages.map((page) => <p class="cursor-pointer relative underline-animation">{page.name}</p>)}
+  class="flex fixed top-8 bg-primary shadow-primary-shiny text-primary shadow-primary text-white font-medium py-4 px-10 justify-between w-96 border-primary border rounded-full">
+  {pages.map((page) => <a href={page.link} class="cursor-pointer relative underline-animation">{page.name}</a>)}
 </div>
 
 <style>
