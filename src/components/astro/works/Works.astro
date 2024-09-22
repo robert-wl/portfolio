@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import type { IProject } from "src/models/project";
+import { cn } from "src/utils/class-name";
+import GithubLineIcon from "../icons/GithubLineIcon.astro";
+import RedirectLineIcon from "../icons/RedirectLineIcon.astro";
+
+interface Props {
+  data: IProject;
+  inverted: boolean;
+}
+
+const { data, inverted } = Astro.props;
+---
+
+<div class={cn(inverted ? "flex-row" : "flex-row-reverse", "flex w-full")}>
+    <div class="w-[45%]">
+        <Image
+            class="rounded-xl w-full object-cover"
+            width="550"
+            height="550"
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt="Temporary Image"
+        />
+    </div>
+    <div class="flex flex-col">
+        <h4 class="flex gap-4 text-3xl font-semibold text-white">
+            <span>{data.title}</span>
+            <GithubLineIcon />
+            <RedirectLineIcon />
+        </h4>
+    </div>
+</div>
+
+
