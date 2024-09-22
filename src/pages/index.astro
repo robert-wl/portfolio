@@ -11,6 +11,7 @@ import LocationIcon from "src/components/astro/icons/LocationIcon.astro";
 import LinkedInIcon from "src/components/astro/icons/LinkedInIcon.astro";
 import EmailFilledIcon from "src/components/astro/icons/EmailFilledIcon.astro";
 import GithubIcon from "src/components/astro/icons/GithubIcon.astro";
+import SideContacts from "src/components/astro/SideContacts.astro";
 
 interface IExpertise {
   title: string;
@@ -37,7 +38,8 @@ const expertiseData: IExpertise[] = [
 ---
 
 <Layout title="Home Page">
-  <main class="flex flex-col items-center w-full h-full min-w-[100vw] min-h-[100vh] bg-background">
+  <main class="flex flex-col items-center relative w-full h-full min-w-[100vw] min-h-[100vh] bg-background">
+    <SideContacts />
     <Navbar />
     <div class="flex flex-col w-3/4">
       <section class="flex justify-between items-center min-h-[100vh] h-[100vh] gap-5">
@@ -93,15 +95,18 @@ const expertiseData: IExpertise[] = [
             nulla quo deleniti nostrum doloremque
           </div>
           <div class="flex flex-col w-1/2 gap-8">
-            <div class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
+            <div
+              class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <EmailIcon />
               <span class="text-xl"> robert.wiliam12345@gmail.com </span>
             </div>
-            <div class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
+            <div
+              class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <WhatsappIcon />
               <span class="text-xl"> +62 878-8898-8754 </span>
             </div>
-            <div class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
+            <div
+              class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <LocationIcon />
               <span class="text-xl"> Jakarta, Indonesia </span>
             </div>
