@@ -10,26 +10,40 @@ interface Props {
   inverted: boolean;
 }
 
-const { data, inverted } = Astro.props;
+const {
+  data: { title, date, description, techStack },
+  inverted,
+} = Astro.props;
 ---
 
-<div class={cn(inverted ? "flex-row" : "flex-row-reverse", "flex w-full")}>
-    <div class="w-[45%]">
-        <Image
-            class="rounded-xl w-full object-cover"
-            width="550"
-            height="550"
-            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-            alt="Temporary Image"
-        />
+<div class={cn(inverted ? "flex-row" : "flex-row-reverse", "flex w-full gap-16 py-12")}>
+  <div class="w-[45%]">
+    <Image
+      class="rounded-3xl w-full object-cover"
+      width="550"
+      height="550"
+      src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+      alt="Temporary Image"
+    />
+  </div>
+  <div class="flex flex-col w-[55%] justify-center">
+    <h4 class="flex text-3xl gap-2 font-semibold text-white">
+      <span class="pe-4">{title}</span>
+      <div class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
+        <GithubLineIcon />
+      </div>
+      <div class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
+        <RedirectLineIcon />
+      </div>
+    </h4>
+    <p class="text-gray-500">{date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+    <p class="text-white text-lg py-4">{description}</p>
+    <div class="flex gap-4 pt-4">
+      {
+        techStack.map((tech) => {
+          return <span class="bg-[#00ADB4] font-roboto-mono text-lg text-primary bg-opacity-20 px-4 py-0.5 rounded-full">{tech}</span>;
+        })
+      }
     </div>
-    <div class="flex flex-col">
-        <h4 class="flex gap-4 text-3xl font-semibold text-white">
-            <span>{data.title}</span>
-            <GithubLineIcon />
-            <RedirectLineIcon />
-        </h4>
-    </div>
+  </div>
 </div>
-
-
