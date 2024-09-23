@@ -1,4 +1,4 @@
-const data = {
+const homeData = {
   greetings: "Hello, my name is",
   name: "Robert Wiliam",
   description: [
@@ -31,4 +31,4 @@ const data = {
   },
 };
 
-export default data;
+export default homeData;

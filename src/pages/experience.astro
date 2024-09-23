@@ -5,6 +5,7 @@ import SideContacts from "../components/astro/VerticalContacts.astro";
 import ExperienceStepper from "../components/astro/experience/ExperienceStepper.astro";
 import ExperienceStepperContent from "../components/astro/experience/ExperienceStepperContent.astro";
 import Footer from "../components/astro/Footer.astro";
+import experienceData from "../data/experience.json";
 ---
 
 <Layout title="Works Page">
@@ -17,11 +18,16 @@ import Footer from "../components/astro/Footer.astro";
       </div>
       <div class="py-16">
         <ExperienceStepper>
-          <ExperienceStepperContent />
-          <ExperienceStepperContent />
-          <ExperienceStepperContent />
-          <ExperienceStepperContent />
-          <ExperienceStepperContent isLast />
+          {
+            experienceData.map((experience, index) => {
+              return (
+                <ExperienceStepperContent
+                  data={experience}
+                  isLast={index === experienceData.length - 1}
+                />
+              );
+            })
+          }
         </ExperienceStepper>
       </div>
     </div>

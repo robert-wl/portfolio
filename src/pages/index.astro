@@ -6,13 +6,13 @@ import EmailIcon from "../components/astro/icons/EmailIcon.astro";
 import WhatsappIcon from "src/components/astro/icons/WhatsappIcon.astro";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import data from "src/data/home.json.ts";
+import homeData from "src/data/home.json.ts";
 import ExpertiseCard from "../components/astro/home/ExpertiseCard.astro";
 import LocationIcon from "../components/astro/icons/LocationIcon.astro";
 import SideContacts from "../components/astro/VerticalContacts.astro";
 import HorizontalContacts from "../components/astro/HorizontalContacts.astro";
 
-const processedExpertise = data.expertise.map((e) => {
+const processedExpertise = homeData.expertise.map((e) => {
   const description = e.description.replaceAll("[", "<span class='text-primary text-xl font-semibold'>").replaceAll("]", "</span>");
 
   return {
@@ -29,11 +29,11 @@ const processedExpertise = data.expertise.map((e) => {
     <div class="flex flex-col w-3/4">
       <section class="flex justify-between items-center min-h-[100vh] h-[100vh] gap-5">
         <div class="flex flex-col items-start gap-2 w-3/5">
-          <h2 class="text-4xl font-bold text-white">{data.greetings}</h2>
-          <h1 class="text-6xl font-semibold name-gradient drop-shadow-primary">{data.name}</h1>
+          <h2 class="text-4xl font-bold text-white">{homeData.greetings}</h2>
+          <h1 class="text-6xl font-semibold name-gradient drop-shadow-primary">{homeData.name}</h1>
           <div class="flex flex-col gap-4 py-8">
             {
-              data.description.map((d) => {
+              homeData.description.map((d) => {
                 return <p class="text-white font-inter text-xl">{d}</p>;
               })
             }
@@ -86,7 +86,7 @@ const processedExpertise = data.expertise.map((e) => {
         <h3 class="text-white text-4xl font-semibold">Let's Get In Touch</h3>
         <div class="flex px-32 items-center justify-center gap-32">
           <div class="w-1/2 text-white text-2xl text-justify">
-            {data.contacts.description}
+            {homeData.contacts.description}
           </div>
           <div class="flex flex-col w-1/2 gap-8">
             <div

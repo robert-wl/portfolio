@@ -1,0 +1,80 @@
+import type { IExperience } from "../models/experience";
+
+const experienceData: IExperience[] = [
+  {
+    title: "Research and Development Staff",
+    date: "2023 - Present",
+    description: [
+      "I am a Junior Laboratory Assistant in Software Laboratory Center Binus. I am responsible for teaching several classes for both the BINUS Computer Science and Information Systems majors. Some of the courses that I teach include:",
+      ":",
+      "- Algorithm and Programming with [C++]",
+      "- Introduction to Database Systems with [SSMS] and [SQL Server]",
+      "- Computational Biology with [Python] using the [BioPython library]",
+      "- Multimedia Programming Foundation with [Java] using the [JavaFX library]",
+      "- Computer Graphics using the [WebGL library Three.js]",
+      "- Computer Vision with [Python] using the [OpenCV library]",
+      "- Mobile Community Solution using [Java] and [Android Studio]",
+      ";",
+      "I also completed the mandatory Test Progressive Assistant (TPA) as part of our development program. The development tests include:",
+      ":",
+      "- Game Programming (Cloning Monster Hunter) using [Unity] and [C#]",
+      "- Business Analysis and Desktop Application Development (Hospital management desktop application) using [Visual Paradigm], [Electron], [Next.js], and [Firebase]",
+      "- Web Design and Programming (Cloning Facebook) using [React], [TypeScript], [SCSS], [Go], [GraphQL], [PostgreSQL], and [Firebase]",
+      "- Mobile Application Development (Lost and found mobile application) using [Kotlin] and [Firebase]",
+      "- Networking (Small and Simple Kubernetes setup) using [Cisco Packet Tracer], [Terraform], [Proxmox], [Docker], [GitHub Actions], and [Kubernetes]",
+      ";",
+    ],
+    techStack: ["React", "Node.js", "MongoDB", "Docker", "Kubernetes"],
+    imageUrls: [
+      {
+        src: "/images/experience/xyz.png",
+        alt: "PT. XYZ",
+        description: "PT. XYZ",
+      },
+    ],
+  },
+  {
+    title: "Teaching Assistant (Junior Laboratory Assistant)",
+    date: "Feb 2023 - Feb 2024",
+    description: [
+      "I am a Junior Laboratory Assistant in Software Laboratory Center Binus. I am responsible for teaching several classes for both the BINUS Computer Science and Information Systems majors. Some of the courses that I teach include:",
+      ":",
+      "- Algorithm and Programming with [C++]",
+      "- Introduction to Database Systems with [SSMS] and [SQL Server]",
+      "- Computational Biology with [Python] using the [BioPython library]",
+      "- Multimedia Programming Foundation with [Java] using the [JavaFX library]",
+      "- Computer Graphics using the [WebGL library Three.js]",
+      "- Computer Vision with [Python] using the [OpenCV library]",
+      "- Mobile Community Solution using [Java] and [Android Studio]",
+      ";",
+      "I also completed the mandatory Test Progressive Assistant (TPA) as part of our development program. The development tests include:",
+      ":",
+      "- Game Programming (Cloning Monster Hunter) using [Unity] and [C#]",
+      "- Business Analysis and Desktop Application Development (Hospital management desktop application) using [Visual Paradigm], [Electron], [Next.js], and [Firebase]",
+      "- Web Design and Programming (Cloning Facebook) using [React], [TypeScript], [SCSS], [Go], [GraphQL], [PostgreSQL], and [Firebase]",
+      "- Mobile Application Development (Lost and found mobile application) using [Kotlin] and [Firebase]",
+      "- Networking (Small and Simple Kubernetes setup) using [Cisco Packet Tracer], [Terraform], [Proxmox], [Docker], [GitHub Actions], and [Kubernetes]",
+      ";",
+      "I was also awarded several awards during my time as a Junior Laboratory Assistant, including:",
+      ":",
+      "- Diploma of Best Performing Assistant",
+      "- Best Qualification",
+      ";",
+    ],
+    techStack: ["React", "Node.js", "MongoDB", "Docker", "Kubernetes"],
+    imageUrls: [
+      {
+        src: "/experience/certificate-best-qualification.jpg",
+        alt: "Certificate of Best Qualification",
+        description: "Certificate of Best Qualification",
+      },
+      {
+        src: "/experience/certificate-diploma-best-assistant.jpg",
+        alt: "Diploma of Best Performing Assistant",
+        description: "Diploma of Best Performing Assistant",
+      },
+    ],
+  },
+];
+
+export default experienceData;
