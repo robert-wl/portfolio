@@ -12,12 +12,12 @@ const { isLast = false, data } = Astro.props;
 
 const processedDescription = data.description
   .map((text) => {
-    text = text.replaceAll("[", "<span class='text-primary text-xl font-semibold'>").replaceAll("]", "</span>");
+    text = text.replaceAll("[", "<span class='text-primary text-base font-semibold'>").replaceAll("]", "</span>").replaceAll("\n", "<br>");
 
     if (text.startsWith(":")) return "<ul>";
-    if (text.startsWith("-")) return `<li class="text-white text-xl">${text}</li>`;
+    if (text.startsWith("-")) return `<li class="text-white text-base">${text}</li>`;
     if (text.startsWith(";")) return "</ul>";
-    return `<p class="text-white text-xl">${text}</p>`;
+    return `<p class="text-white text-base">${text}</p>`;
   })
   .join("");
 ---
@@ -36,8 +36,8 @@ const processedDescription = data.description
         <h2 class="text-white text-2xl font-bold">{data.date}</h2>
         <h2 class="text-white text-2xl font-bold">{data.title}</h2>
       </header>
-      <p
-        class="text-white text-xl"
+      <div
+        class="text-white text-base"
         set:html={processedDescription}
       />
       <div class="flex gap-8 py-4">
@@ -52,7 +52,7 @@ const processedDescription = data.description
                   src={image.src}
                   alt={image.alt}
                 />
-                <span class="text-md text-white text-opacity-50">{image.description}</span>
+                <span class="text-base text-white text-opacity-50">{image.description}</span>
               </div>
             );
           })

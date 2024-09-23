@@ -24,7 +24,7 @@ const { pathname } = Astro.url;
     pages.map((page) => (
       <a
         href={page.link}
-        class={cn(pathname === page.link ? "underline-active" : "", "cursor-pointer relative underline-animation")}>
+        class={cn(pathname === page.link ? "underline-active" : "", "cursor-pointer text-base relative underline-animation")}>
         {page.name}
       </a>
     ))

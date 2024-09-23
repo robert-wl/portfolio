@@ -2,7 +2,6 @@ export interface IExperience {
   title: string;
   date: string;
   description: string[];
-  techStack: string[];
   imageUrls: IImageData[];
 }
 

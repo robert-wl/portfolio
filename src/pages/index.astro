@@ -13,7 +13,7 @@ import SideContacts from "../components/astro/VerticalContacts.astro";
 import HorizontalContacts from "../components/astro/HorizontalContacts.astro";
 
 const processedExpertise = homeData.expertise.map((e) => {
-  const description = e.description.replaceAll("[", "<span class='text-primary text-xl font-semibold'>").replaceAll("]", "</span>");
+  const description = e.description.replaceAll("[", "<span class='text-primary !text-base font-semibold'>").replaceAll("]", "</span>");
 
   return {
     title: e.title,
@@ -34,7 +34,7 @@ const processedExpertise = homeData.expertise.map((e) => {
           <div class="flex flex-col gap-4 py-8">
             {
               homeData.description.map((d) => {
-                return <p class="text-white font-inter text-xl">{d}</p>;
+                return <p class="text-white font-inter text-base">{d}</p>;
               })
             }
           </div>
@@ -61,7 +61,7 @@ const processedExpertise = homeData.expertise.map((e) => {
               return (
                 <ExpertiseCard title={expertise.title}>
                   <div
-                    class="text-white"
+                    class="text-white text-base"
                     set:html={expertise.description}
                   />
                 </ExpertiseCard>
@@ -85,24 +85,24 @@ const processedExpertise = homeData.expertise.map((e) => {
       <section class="flex flex-col items-center gap-12 py-16">
         <h3 class="text-white text-4xl font-semibold">Let's Get In Touch</h3>
         <div class="flex px-32 items-center justify-center gap-32">
-          <div class="w-1/2 text-white text-2xl text-justify">
+          <div class="w-1/2 text-white text-xl text-justify">
             {homeData.contacts.description}
           </div>
           <div class="flex flex-col w-1/2 gap-8">
             <div
               class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <EmailIcon />
-              <span class="text-xl"> robert.wiliam12345@gmail.com </span>
+              <span class="text-lg"> robert.wiliam12345@gmail.com </span>
             </div>
             <div
               class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <WhatsappIcon />
-              <span class="text-xl"> +62 878-8898-8754 </span>
+              <span class="text-lg"> +62 878-8898-8754 </span>
             </div>
             <div
               class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
               <LocationIcon />
-              <span class="text-xl"> Jakarta, Indonesia </span>
+              <span class="text-lg"> Jakarta, Indonesia </span>
             </div>
           </div>
         </div>
