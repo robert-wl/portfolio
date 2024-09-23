@@ -1,4 +1,5 @@
 import { type ReactNode, useState } from "react";
+import { cn } from "../../utils/class-name.ts";
 
 interface IProps {
   personalProjects?: ReactNode;
@@ -17,8 +18,22 @@ export default function ProjectList({ personalProjects, professionalProjects }: 
     <div className="flex flex-col gap-6">
       <h1 className="pt-64 text-white text-4xl font-medium">Works and Projects I've Done</h1>
       <div className="flex gap-16 text-white text-xl">
-        <button onClick={() => setType(ProjectType.Professional)}>Professional</button>
-        <button onClick={() => setType(ProjectType.Personal)}>Personal</button>
+        <button
+          className={cn(
+            type === ProjectType.Professional ? "text-primary" : "menu-animation-disabled",
+            "font-bold relative transition-colors menu-animation",
+          )}
+          onClick={() => setType(ProjectType.Professional)}>
+          Professional
+        </button>
+        <button
+          className={cn(
+            type === ProjectType.Personal ? "text-primary" : "menu-animation-disabled",
+            "font-bold relative transition-colors menu-animation",
+          )}
+          onClick={() => setType(ProjectType.Personal)}>
+          Personal
+        </button>
       </div>
       <div className="flex flex-col gap-8">
         {type === ProjectType.Professional && professionalProjects}
