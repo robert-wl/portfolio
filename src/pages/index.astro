@@ -11,10 +11,10 @@ import ExpertiseCard from "../components/astro/home/ExpertiseCard.astro";
 import LocationIcon from "../components/astro/icons/LocationIcon.astro";
 import SideContacts from "../components/astro/VerticalContacts.astro";
 import HorizontalContacts from "../components/astro/HorizontalContacts.astro";
+import stringPreprocessor from "../utils/string-preprocessor";
 
 const processedExpertise = homeData.expertise.map((e) => {
-  const description = e.description.replaceAll("[", "<span class='text-primary !text-base font-semibold'>").replaceAll("]", "</span>");
-
+  const description = stringPreprocessor(e.description);
   return {
     title: e.title,
     description: description,

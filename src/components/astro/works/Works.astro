@@ -4,6 +4,7 @@ import type { IProject } from "src/models/project";
 import { cn } from "src/utils/class-name";
 import GithubLineIcon from "../icons/GithubLineIcon.astro";
 import RedirectLineIcon from "../icons/RedirectLineIcon.astro";
+import stringPreprocessor from "../../../utils/string-preprocessor";
 
 interface Props {
   data: IProject;
@@ -11,9 +12,11 @@ interface Props {
 }
 
 const {
-  data: { title, date, description, techStack },
+  data: { title, date, description, techStack, imageUrl, githubUrl, projectUrl, isLive },
   inverted,
 } = Astro.props;
+
+const processeedDescription = stringPreprocessor(description);
 ---
 
 <section class={cn(inverted ? "flex-row" : "flex-row-reverse", "flex w-full gap-16 py-12")}>
@@ -22,26 +25,52 @@ const {
       class="rounded-3xl w-full object-cover"
       width="550"
       height="550"
-      src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+      src={imageUrl}
       alt="Temporary Image"
     />
   </div>
   <div class="flex flex-col w-[55%] justify-center">
-    <h4 class="flex text-3xl gap-2 font-semibold text-white">
+    {
+      isLive && (
+        <div class="flex items-center relative">
+          <span class="absolute -left-0.5 animate-ping inline-flex h-4 w-4 rounded-full bg-red-500 opacity-75" />
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+          <p class="ps-3 text-base text-white">LIVE</p>
+        </div>
+      )
+    }
+    <h4 class="flex text-3xl gap-2 items-center font-semibold text-white">
       <span class="pe-4">{title}</span>
-      <div class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
-        <GithubLineIcon />
-      </div>
-      <div class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
-        <RedirectLineIcon />
-      </div>
+      {
+        githubUrl && (
+          <a
+            target="”_blank”"
+            href={githubUrl}
+            class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
+            <GithubLineIcon />
+          </a>
+        )
+      }
+      {
+        isLive && (
+          <a
+            target="”_blank”"
+            href={projectUrl}
+            class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
+            <RedirectLineIcon />
+          </a>
+        )
+      }
     </h4>
-    <p class="text-gray-500">{date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
-    <p class="text-white text-lg py-4">{description}</p>
+    <p class="text-gray-500">{date}</p>
+    <p
+      class="text-white text-base py-4"
+      set:html={processeedDescription}
+    />
     <div class="flex gap-4 pt-4">
       {
         techStack.map((tech) => {
-          return <span class="bg-[#00ADB4] font-roboto-mono text-lg text-primary bg-opacity-20 px-4 py-0.5 rounded-full">{tech}</span>;
+          return <span class="bg-[#00ADB4] text-nowrap font-roboto-mono text-base text-primary bg-opacity-20 px-4 py-0.5 rounded-full">{tech}</span>;
         })
       }
     </div>

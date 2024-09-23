@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { cn } from "../../../utils/class-name";
 import { type IExperience } from "../../../models/experience";
+import stringPreprocessor from "../../../utils/string-preprocessor";
 
 interface Props {
   isLast?: boolean;
@@ -10,16 +11,7 @@ interface Props {
 
 const { isLast = false, data } = Astro.props;
 
-const processedDescription = data.description
-  .map((text) => {
-    text = text.replaceAll("[", "<span class='text-primary text-base font-semibold'>").replaceAll("]", "</span>").replaceAll("\n", "<br>");
-
-    if (text.startsWith(":")) return "<ul>";
-    if (text.startsWith("-")) return `<li class="text-white text-base">${text}</li>`;
-    if (text.startsWith(";")) return "</ul>";
-    return `<p class="text-white text-base">${text}</p>`;
-  })
-  .join("");
+const processedDescription = data.description.map(stringPreprocessor).join("");
 ---
 
 <li
