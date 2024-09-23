@@ -1,0 +1,30 @@
+---
+import Navbar from "../components/astro/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+import SideContacts from "../components/astro/SideContacts.astro";
+import ExperienceStepper from "../components/astro/experience/ExperienceStepper.astro";
+import ExperienceStepperContent from "../components/astro/experience/ExperienceStepperContent.astro";
+import Footer from "../components/astro/Footer.astro";
+---
+
+<Layout title="Works Page">
+  <main class="flex flex-col items-center w-full h-full min-w-[100vw] min-h-[100vh] bg-background">
+    <Navbar />
+    <SideContacts />
+    <div class="flex flex-col w-3/4">
+      <div class="flex flex-col gap-6">
+        <h1 class="pt-64 text-white text-4xl font-medium">My Experience Over the Years</h1>
+      </div>
+      <div class="py-16">
+        <ExperienceStepper>
+          <ExperienceStepperContent />
+          <ExperienceStepperContent />
+          <ExperienceStepperContent />
+          <ExperienceStepperContent />
+          <ExperienceStepperContent isLast />
+        </ExperienceStepper>
+      </div>
+    </div>
+    <Footer />
+  </main>
+</Layout>

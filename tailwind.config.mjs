@@ -13,6 +13,7 @@ export default {
       backgroundColor: {
         primary: "#2d323d",
         background: "#212832",
+        "fill-primary": "#00ADB4",
       },
       textColor: {
         primary: "#00ADB4",

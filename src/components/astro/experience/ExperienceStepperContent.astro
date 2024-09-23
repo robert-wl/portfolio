@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import { cn } from "../../../utils/class-name";
+
+interface Props {
+  isLast?: boolean;
+}
+
+const { isLast = false } = Astro.props;
+---
+
+<li
+  class={cn(
+    isLast ? "" : "after:h-[calc(100%-2.9rem)]",
+    "relative h-fit after:absolute after:left-6 after:top-[4.4rem] after:mt-px after:w-px after:bg-fill-primary",
+  )}>
+  <div class="flex justify-start items-start gap-8 py-6">
+    <span
+      class="me-3 flex h-12 w-12 min-h-12 min-w-12 aspect-square items-center justify-center rounded-full text-sm bg-fill-primary bg-opacity-40 border-[1.5px] border-primary text-white">
+    </span>
+    <section class="flex flex-col gap-8 pt-2 pb-8">
+      <header class="flex flex-col gap-2">
+        <h2 class="text-white text-2xl font-bold">2023 - Present</h2>
+        <h2 class="text-white text-2xl font-bold">Research and Development</h2>
+      </header>
+      <p class="text-white text-xl">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+      </p>
+      <div class="flex gap-8 py-4">
+        <div class="flex flex-col items-start gap-2 justify-center">
+          <Image
+            class="object-cover rounded-3xl"
+            width="250"
+            height="50"
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt="Temporary Image"
+          />
+          <span class="text-lg text-white text-opacity-50">teststsetewst</span>
+        </div>
+        <div class="flex flex-col items-start gap-2 justify-center">
+          <Image
+            class="object-cover rounded-3xl"
+            width="250"
+            height="50"
+            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            alt="Temporary Image"
+          />
+          <span class="text-lg text-white text-opacity-50">teststsetewst</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</li>
