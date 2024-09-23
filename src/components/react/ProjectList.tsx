@@ -1,4 +1,4 @@
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { cn } from "../../utils/class-name.ts";
 
 interface IProps {
@@ -13,6 +13,19 @@ enum ProjectType {
 
 export default function ProjectList({ personalProjects, professionalProjects }: IProps) {
   const [type, setType] = useState(ProjectType.Professional);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+
+    const elements = document.querySelectorAll("section");
+    elements.forEach((element) => observer.observe(element));
+  }, [type]);
 
   return (
     <div className="flex flex-col gap-6">
