@@ -1,4 +1,5 @@
 ---
+import { cn } from "../../utils/class-name";
 const pages = [
   {
     name: "Home",
@@ -13,6 +14,8 @@ const pages = [
     link: "/works",
   },
 ];
+
+const { pathname } = Astro.url;
 ---
 
 <div
@@ -21,7 +24,7 @@ const pages = [
     pages.map((page) => (
       <a
         href={page.link}
-        class="cursor-pointer relative underline-animation">
+        class={cn(pathname === page.link ? "underline-active" : "", "cursor-pointer relative underline-animation")}>
         {page.name}
       </a>
     ))
@@ -40,6 +43,10 @@ const pages = [
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
+  }
+
+  .underline-active::after {
+    transform: scaleX(1);
   }
 
   .underline-animation:hover::after {

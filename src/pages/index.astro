@@ -6,36 +6,20 @@ import EmailIcon from "../components/astro/icons/EmailIcon.astro";
 import WhatsappIcon from "src/components/astro/icons/WhatsappIcon.astro";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import { fade } from "astro:transitions";
+import data from "src/data/home.json.ts";
 import ExpertiseCard from "../components/astro/home/ExpertiseCard.astro";
 import LocationIcon from "../components/astro/icons/LocationIcon.astro";
-import LinkedInIcon from "../components/astro/icons/LinkedInIcon.astro";
-import EmailFilledIcon from "../components/astro/icons/EmailFilledIcon.astro";
-import GithubIcon from "../components/astro/icons/GithubIcon.astro";
-import SideContacts from "src/components/astro/SideContacts.astro";
+import SideContacts from "../components/astro/VerticalContacts.astro";
+import HorizontalContacts from "../components/astro/HorizontalContacts.astro";
 
-interface IExpertise {
-  title: string;
-  description: string;
-}
+const processedExpertise = data.expertise.map((e) => {
+  const description = e.description.replaceAll("[", "<span class='text-primary text-xl font-semibold'>").replaceAll("]", "</span>");
 
-const expertiseData: IExpertise[] = [
-  {
-    title: "Frontend Development",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
-  },
-  {
-    title: "Frontend Development",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
-  },
-  {
-    title: "Frontend Development",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever",
-  },
-];
+  return {
+    title: e.title,
+    description: description,
+  };
+});
 ---
 
 <Layout title="Home Page">
@@ -45,12 +29,15 @@ const expertiseData: IExpertise[] = [
     <div class="flex flex-col w-3/4">
       <section class="flex justify-between items-center min-h-[100vh] h-[100vh] gap-5">
         <div class="flex flex-col items-start gap-2 w-3/5">
-          <h2 class="text-4xl font-bold text-white">Hello, my name is</h2>
-          <h1 class="text-6xl font-semibold name-gradient drop-shadow-primary">Robert Wiliam</h1>
-          <p class="text-white text-xl py-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+          <h2 class="text-4xl font-bold text-white">{data.greetings}</h2>
+          <h1 class="text-6xl font-semibold name-gradient drop-shadow-primary">{data.name}</h1>
+          <div class="flex flex-col gap-4 py-8">
+            {
+              data.description.map((d) => {
+                return <p class="text-white font-inter text-xl">{d}</p>;
+              })
+            }
+          </div>
           <button
             class="text-primary font-semibold rounded-full transition-colors bg-transparent my-8 py-4 px-8 border overflow-hidden hover:text-white border-primary relative button-animation">
             <span class="relative z-10">Download CV</span>
@@ -67,13 +54,16 @@ const expertiseData: IExpertise[] = [
         </div>
       </section>
       <section class="flex flex-col items-center min-h-[100vh] h-[100vh]">
-        <h3 class="text-white text-4xl font-semibold">My Expertise</h3>
+        <h3 class="text-white text-4xl font-semibold">My Expertise and Interest</h3>
         <div class="flex gap-8 pt-16 pb-8">
           {
-            expertiseData.map((expertise) => {
+            processedExpertise.map((expertise) => {
               return (
                 <ExpertiseCard title={expertise.title}>
-                  <div class="text-white">{expertise.description}</div>
+                  <div
+                    class="text-white"
+                    set:html={expertise.description}
+                  />
                 </ExpertiseCard>
               );
             })
@@ -81,7 +71,11 @@ const expertiseData: IExpertise[] = [
         </div>
         <div class="flex w-full justify-end">
           <div class="flex justify-center group items-center gap-2 font-light arrow-animation cursor-pointer">
-            <span class="text-xl text-white">Learn more about my expertise</span>
+            <a
+              href="./works"
+              class="text-xl text-white">
+              Learn more about my works
+            </a>
             <div class="group-hover:animate-wiggle">
               <ArrowIcon />
             </div>
@@ -91,9 +85,8 @@ const expertiseData: IExpertise[] = [
       <section class="flex flex-col items-center gap-12 py-16">
         <h3 class="text-white text-4xl font-semibold">Let's Get In Touch</h3>
         <div class="flex px-32 items-center justify-center gap-32">
-          <div class="w-1/2 text-white text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa, illo eos eaque possimus doloribus voluptatem blanditiis reiciendis
-            nulla quo deleniti nostrum doloremque
+          <div class="w-1/2 text-white text-2xl text-justify">
+            {data.contacts.description}
           </div>
           <div class="flex flex-col w-1/2 gap-8">
             <div
@@ -113,19 +106,7 @@ const expertiseData: IExpertise[] = [
             </div>
           </div>
         </div>
-        <div class="flex flex-col items-center justify-center gap-8 pt-16">
-          <div class="flex gap-4">
-            <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
-              <LinkedInIcon />
-            </div>
-            <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
-              <EmailFilledIcon />
-            </div>
-            <div class="drop-shadow-white hover:animate-bob-up-down cursor-pointer">
-              <GithubIcon />
-            </div>
-          </div>
-        </div>
+        <HorizontalContacts />
       </section>
       <Footer />
     </div>
@@ -164,7 +145,7 @@ const expertiseData: IExpertise[] = [
     left: 0;
     bottom: -20%;
     width: 100%;
-    height: 3px;
+    height: 1px;
     background-color: #00adb4;
     transform: scaleX(0);
     transform-origin: left;
