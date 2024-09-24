@@ -72,9 +72,29 @@ export const personalWorksData: IProject[] = [
     isLive: true,
   },
   {
+    title: "Verdant Seeds",
+    description:
+      "Verdant Seed is a tower defense and roguelike hybrid where players protect Yggdrasil, the World Tree, from relentless slime invasions. " +
+      "Using magical plants grown from Yggdrasil's seeds, the goal is to hold out as long as possible and achieve the highest score." +
+      "The project is developed using [Unity] and [C#] and is made for GameSeed 2024 Game Competition.",
+    date: "March 2024",
+    techStack: ["Unity"],
+    githubUrl: ["https://github.com/HPNV/GameSeed2024"],
+    imageUrl: [
+      "/works/personal/verdant-seed/image-1.png",
+      "/works/personal/verdant-seed/image-2.png",
+      "/works/personal/verdant-seed/image-3.png",
+      "/works/personal/verdant-seed/image-4.png",
+    ],
+    isLive: false,
+  },
+  {
     title: "Hand Sign Recognizer Trainer and Detector",
     description:
-      "A desktop application that can be used to train and detect hand signs. User can input different hand sign images and choose the model of their choice to train the model. The application uses [Python], in junction with [Mediapipe] and [Scikit Learn]. The application itself uses [Tauri] along with [Svelte] for the frontend.",
+      "A desktop application that can be used to train and detect hand signs. " +
+      "User can input different hand sign images and choose the model of their choice to train the model. " +
+      "The application uses [Python], in junction with [Mediapipe] and [Scikit Learn]. " +
+      "The application itself uses [Tauri] along with [Svelte] for the frontend.",
     date: "June 2024",
     techStack: ["Svelte", "Rust", "Tauri", "Python", "Mediapipe"],
     githubUrl: ["https://github.com/yahkerobertkertasnya/tauri-hand-gesture-recognition"],
