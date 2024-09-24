@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import type { IProject } from "src/models/project";
 import { cn } from "src/utils/class-name";
 import GithubLineIcon from "../icons/GithubLineIcon.astro";
@@ -21,16 +20,39 @@ const processeedDescription = stringPreprocessor(description);
 ---
 
 <section class={cn(inverted ? "flex-row" : "flex-row-reverse", "flex w-full gap-16 py-12")}>
-  <div class="w-[45%]">
-    <InteractiveImage
-      class="rounded-xl w-full h-92 object-cover hover:scale-105 transition-transform cursor-pointer"
-      width={550}
-      height={850}
-      src={imageUrl}
-      alt="Temporary Image"
-    />
+  <div class="flex flex-col w-[45%] gap-2">
+    <div class="w-full">
+      {
+        imageUrl.length > 0 && (
+          <InteractiveImage
+            class="rounded-xl w-full h-92 object-cover hover:scale-[102%] transition-transform cursor-pointer"
+            width={550}
+            height={850}
+            src={imageUrl[0]!}
+            alt="Temporary Image"
+          />
+        )
+      }
+    </div>
+    {
+      imageUrl.length > 1 && (
+        <div class={cn("flex w-full gap-4", imageUrl.length > 3 ? "justify-between" : "justify-start")}>
+          {imageUrl.slice(1).map((url) => {
+            return (
+              <InteractiveImage
+                class="rounded-xl w-[31%] h-92 object-cover hover:scale-[102%] transition-transform cursor-pointer"
+                width={550}
+                height={850}
+                src={url}
+                alt="Temporary Image"
+              />
+            );
+          })}
+        </div>
+      )
+    }
   </div>
-  <div class="flex flex-col w-[55%] justify-center">
+  <div class="flex flex-col items-start w-[55%] justify-start">
     {
       isLive && (
         <div class="flex items-center relative">
@@ -46,7 +68,7 @@ const processeedDescription = stringPreprocessor(description);
         githubUrl?.map((url) => {
           return (
             <a
-              target="”_blank”"
+              target="_blank"
               href={url}
               class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
               <GithubLineIcon />
@@ -57,7 +79,7 @@ const processeedDescription = stringPreprocessor(description);
       {
         isLive && (
           <a
-            target="”_blank”"
+            target="_blank"
             href={projectUrl}
             class="hover:stroke-primary stroke-white cursor-pointer transition-colors">
             <RedirectLineIcon />
