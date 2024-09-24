@@ -44,7 +44,7 @@ export const personalWorksData: IProject[] = [
       "The platform is designed to be decentralized, secure, and scalable. It is also designed to be easy to use and accessible to everyone. " +
       "This project won the first place in the DFINITY Hackathon 2024.",
     date: "March 2024",
-    techStack: ["ReactJS", "Internet Computer", "Motoko"],
+    techStack: ["Web3", "Blockchain", "ReactJS", "Internet Computer", "Motoko"],
     githubUrl: ["https://github.com/dave-andrew/HireVerse"],
     imageUrl: [
       "/works/personal/hireverse/image-1.png",
@@ -126,7 +126,7 @@ export const personalWorksData: IProject[] = [
     title: "Junimo Kart Clone",
     description:
       "A clone of the Junimo Kart minigame from Stardew Valley using [Java] and [JavaFX]. " +
-      "The project is developed and made as a personal project and as the take home project for Software Laboratory Center assistant entrance exams.",
+      "The project is developed and made as a personal project and was going to be used as the take home project for Software Laboratory Center assistant entrance exams.",
     date: "December 2023",
     techStack: ["Java", "JavaFX"],
     githubUrl: ["https://github.com/yahkerobertkertasnya/junimo-kart-clone"],
