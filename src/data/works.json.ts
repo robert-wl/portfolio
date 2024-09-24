@@ -50,17 +50,17 @@ export const personalWorksData: IProject[] = [
       "/works/personal/hireverse/image-1.png",
       "/works/personal/hireverse/image-2.png",
       "/works/personal/hireverse/image-3.png",
-      //"/works/personal/hireverse/image-4.png",
+      "/works/personal/hireverse/image-4.png",
     ],
     isLive: false,
   },
   {
     title: "Facebook Clone",
     description:
-      "A clone of the Facebook web application using [ReactJS], [Go Lang], [GraphQL] and [PostgreSQL]. " +
+      "A clone of the Facebook web application using [ReactJS], [Go Lang], [GraphQL], [Redis] and [PostgreSQL]. " +
       "The project is developed and made to complete the Software Laboratory Center mandatory Test Progressive Assistant (TPA) project. ",
     date: "July 2023",
-    techStack: ["ReactJS", "Typescript", "SCSS", "Go Lang", "GraphQL", "PostgreSQL"],
+    techStack: ["ReactJS", "Typescript", "SCSS", "Go Lang", "GraphQL", "Redis", "PostgreSQL"],
     githubUrl: ["https://github.com/yahkerobertkertasnya/facebook-clone-backend", "https://github.com/yahkerobertkertasnya/facebook-clone-frontend"],
     projectUrl: "http://yahkerobertkertasnya.my.id/facebook",
     imageUrl: [
@@ -78,7 +78,12 @@ export const personalWorksData: IProject[] = [
     date: "June 2024",
     techStack: ["Svelte", "Rust", "Tauri", "Python", "Mediapipe"],
     githubUrl: ["https://github.com/yahkerobertkertasnya/tauri-hand-gesture-recognition"],
-    imageUrl: ["/works/personal/image-1.png"],
+    imageUrl: [
+      "/works/personal/hand-sign-recognizer/image-1.png",
+      "/works/personal/hand-sign-recognizer/image-2.png",
+      "/works/personal/hand-sign-recognizer/image-3.png",
+      "/works/personal/hand-sign-recognizer/image-4.png",
+    ],
     isLive: false,
   },
   {
@@ -106,6 +111,18 @@ export const personalWorksData: IProject[] = [
     techStack: ["Java", "JavaFX"],
     githubUrl: ["https://github.com/yahkerobertkertasnya/junimo-kart-clone"],
     imageUrl: ["/works/personal/junimo-kart-clone/image-1.png"],
+    isLive: false,
+  },
+  {
+    title: "Gesture Mind",
+    description:
+      "A AI web-based application that lets people learn about Hand Sign Gesture. " +
+      "Users can use their camera to learn about the letters of the alphabet in American Sign Language. " +
+      "The project is built using [ReactJS], [TensorflowJS], and [MediaPipe].",
+    date: "January 2024",
+    techStack: ["ReactJS", "TensorflowJS", "MediaPipe"],
+    githubUrl: ["https://github.com/yahkerobertkertasnya/AIGestureMind"],
+    imageUrl: ["/works/personal/gesture-mind/image-1.png", "/works/personal/gesture-mind/image-2.png"],
     isLive: false,
   },
 ];
