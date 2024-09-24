@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  src: string;
+  class?: string;
+  width: number;
+  height: number;
+  alt?: string;
+}
+
+const { src, class: className, width, height, alt } = Astro.props;
+---
+
+<Image
+  class={className}
+  width={width}
+  height={height}
+  src={src}
+  alt={alt}
+  onclick={`document.getElementById('fullscreen-dialog-${src}').showModal()`}
+/>
+
+<dialog
+  id=`fullscreen-dialog-${src}`
+  onclick="this.close()"
+  class="overflow-hidden w-3/4 h-fit">
+  <img
+    class="w-full h-full outline-0 border-0 rounded-xl object-cover"
+    src={src}
+    alt={alt}
+  />
+</dialog>

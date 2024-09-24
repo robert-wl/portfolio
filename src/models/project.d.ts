@@ -3,7 +3,7 @@ export interface IProject {
   date: string;
   description: string;
   techStack: string[];
-  githubUrl?: string;
+  githubUrl?: string[];
   projectUrl?: string;
   imageUrl: string;
   isLive: boolean;

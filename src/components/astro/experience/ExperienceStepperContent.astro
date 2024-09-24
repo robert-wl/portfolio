@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { cn } from "../../../utils/class-name";
 import { type IExperience } from "../../../models/experience";
 import stringPreprocessor from "../../../utils/string-preprocessor";
+import InteractiveImage from "../InteractiveImage.astro";
 
 interface Props {
   isLast?: boolean;
@@ -37,10 +38,10 @@ const processedDescription = data.description.map(stringPreprocessor).join("");
           data.imageUrls.map((image) => {
             return (
               <div class="flex flex-col items-start gap-2 justify-center">
-                <Image
+                <InteractiveImage
                   class="object-cover rounded-3xl"
-                  width="250"
-                  height="50"
+                  width={250}
+                  height={50}
                   src={image.src}
                   alt={image.alt}
                 />

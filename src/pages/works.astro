@@ -3,42 +3,9 @@ import Navbar from "src/components/astro/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 import ProjectList from "src/components/react/ProjectList";
 import WorksComponent from "src/components/astro/works/Works.astro";
-import type { IProject } from "src/models/project";
 import SideContacts from "../components/astro/VerticalContacts.astro";
 import Footer from "../components/astro/Footer.astro";
-import { professionalWorksData } from "../data/works.json";
-
-const personal: IProject[] = [
-  {
-    title: "Project 1",
-    date: new Date(),
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
-    techStack: ["React", "TailwindCSS"],
-    githubUrl: "https://github.com",
-    projectUrl: "https://project1.com",
-    imageUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
-  },
-];
-
-const professional: IProject[] = [
-  {
-    title: "Project 2",
-    date: new Date(),
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.",
-    techStack: ["React", "TailwindCSS"],
-    githubUrl: "https://github.com",
-    projectUrl: "https://project2.com",
-    imageUrl: "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
-  },
-];
-
-professional.push(...professional);
-
-personal.push(...personal);
-personal.push(...personal);
-personal.push(...personal);
+import { professionalWorksData, personalWorksData } from "../data/works.json";
 ---
 
 <Layout title="Works Page">
@@ -49,9 +16,9 @@ personal.push(...personal);
       <ProjectList client:load>
         <div
           class="flex flex-col gap-8"
-          slot="personalProjects">
+          slot="professionalProjects">
           {
-            personal.map((p, i) => {
+            professionalWorksData.map((p, i) => {
               return (
                 <WorksComponent
                   data={p}
@@ -63,9 +30,9 @@ personal.push(...personal);
         </div>
         <div
           class="flex flex-col gap-8"
-          slot="professionalProjects">
+          slot="personalProjects">
           {
-            professionalWorksData.map((p, i) => {
+            personalWorksData.map((p, i) => {
               return (
                 <WorksComponent
                   data={p}
