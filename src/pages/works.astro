@@ -1,15 +1,19 @@
 ---
 import Navbar from "src/components/astro/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import ProjectList from "src/components/react/ProjectList";
+import ProjectList from "../components/react/project-list";
 import WorksComponent from "src/components/astro/works/Works.astro";
 import SideContacts from "../components/astro/VerticalContacts.astro";
 import Footer from "../components/astro/Footer.astro";
 import { professionalWorksData, personalWorksData } from "../data/works.json";
+import { StarsBackground } from "../components/react/aceternity/stars-background";
+import { ShootingStars } from "../components/react/aceternity/shooting-stars";
 ---
 
 <Layout title="Works Page">
-  <main class="flex flex-col items-center w-full h-full min-w-[100vw] min-h-[100vh] bg-background">
+  <ShootingStars client:load />
+  <StarsBackground client:load />
+  <main class="flex flex-col items-center w-full h-full min-w-[100vw] min-h-[100vh]">
     <Navbar />
     <SideContacts />
     <div class="flex flex-col w-3/4">

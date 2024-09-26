@@ -3,7 +3,7 @@ import type { IExperience } from "../models/experience";
 const experienceData: IExperience[] = [
   {
     title: "Research and Development Staff",
-    date: "2024 - Present",
+    date: "Feb 2024 - Present",
     description: [
       "As a Research and Developmentt Staff at Software Laboratory Center, I am responsible for maintaining the web infrastructure for Software Laboratory Center and select parts of BINUS. " +
         "Some of the tasks I perform as a Research and Development Staff member include:",

@@ -6,9 +6,13 @@ import ExperienceStepper from "../components/astro/experience/ExperienceStepper.
 import ExperienceStepperContent from "../components/astro/experience/ExperienceStepperContent.astro";
 import Footer from "../components/astro/Footer.astro";
 import experienceData from "../data/experience.json";
+import { StarsBackground } from "../components/react/aceternity/stars-background";
+import { ShootingStars } from "../components/react/aceternity/shooting-stars";
 ---
 
 <Layout title="Works Page">
+  <ShootingStars client:load />
+  <StarsBackground client:load />
   <main class="flex flex-col items-center w-full h-full min-w-[100vw] min-h-[100vh] bg-background">
     <Navbar />
     <SideContacts />
