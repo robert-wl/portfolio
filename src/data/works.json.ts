@@ -5,7 +5,7 @@ export const professionalWorksData: IProject[] = [
     title: "Hyper WLight Drifter",
     description:
       "A self-remake of the indie game Hyper Light Drifter in web form using [HTML], [TypeScript], and [SCSS]. This project uses the original game's assets to create a similar game and mechanics. " +
-      "The project was developed and used as the take-home project for Software Laboratory Center assistant entrance exams",
+      "The project was developed and used as the take-home project for Software Laboratory Center assistant entrance exams. ",
     date: "December 2023",
     techStack: ["HTML", "TypeScript", "JQuery", "SCSS", "Canvas"],
     githubUrl: ["https://github.com/robert-wl/HyperWLightDrifter"],
