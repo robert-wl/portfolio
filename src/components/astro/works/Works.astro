@@ -5,6 +5,7 @@ import GithubLineIcon from "../icons/GithubLineIcon.astro";
 import RedirectLineIcon from "../icons/RedirectLineIcon.astro";
 import stringPreprocessor from "../../../utils/string-preprocessor";
 import InteractiveImage from "../InteractiveImage.astro";
+import imageReader from "../../../utils/image-reader";
 
 interface Props {
   data: IProject;
@@ -29,10 +30,10 @@ const processeedDescription = stringPreprocessor(description);
       {
         imageUrl.length > 0 && (
           <InteractiveImage
-            class="rounded-xl w-full h-92 object-cover hover:scale-[102%] transition-transform cursor-pointer"
+            class="rounded-xl w-full object-cover hover:scale-[102%] transition-transform cursor-pointer"
             width={550}
             height={850}
-            src={imageUrl[0]!}
+            src={imageReader(imageUrl[0]!)}
             alt="Temporary Image"
           />
         )
@@ -47,7 +48,7 @@ const processeedDescription = stringPreprocessor(description);
                 class="rounded-xl w-[31%] h-92 object-cover hover:scale-[102%] transition-transform cursor-pointer"
                 width={550}
                 height={850}
-                src={url}
+                src={imageReader(url)}
                 alt="Temporary Image"
               />
             );

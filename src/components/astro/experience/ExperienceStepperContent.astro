@@ -3,6 +3,7 @@ import { cn } from "../../../utils/class-name";
 import { type IExperience } from "../../../models/experience";
 import stringPreprocessor from "../../../utils/string-preprocessor";
 import InteractiveImage from "../InteractiveImage.astro";
+import imageReader from "../../../utils/image-reader";
 
 interface Props {
   isLast?: boolean;
@@ -41,7 +42,7 @@ const processedDescription = data.description.map(stringPreprocessor).join("");
                   class="object-cover rounded-3xl hover:scale-[102%] transition-transform cursor-pointer"
                   width={250}
                   height={50}
-                  src={image.src}
+                  src={imageReader(image.src)}
                   alt={image.alt}
                 />
                 <span class="text-base text-white text-opacity-50">{image.description}</span>

@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 interface Props {
-  src: string;
+  src: typeof Image.props.src;
   class?: string;
   width: number;
   height: number;
