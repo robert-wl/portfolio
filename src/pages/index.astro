@@ -27,29 +27,29 @@ const processedExpertise = homeData.expertise.map((e) => {
 <Layout title="Home Page">
   <ShootingStars client:load />
   <StarsBackground client:load />
-  <main class="flex flex-col items-center relative w-full h-full min-w-[100vw] min-h-[100vh]">
+  <main class="relative flex h-full min-h-[100vh] w-full min-w-[100vw] flex-col items-center">
     <Navbar />
     <SideContacts />
-    <div class="flex flex-col w-3/4">
-      <section class="flex justify-between items-center min-h-[100vh] h-[100vh] gap-5">
-        <div class="flex flex-col items-start gap-2 w-3/5">
+    <div class="flex w-3/4 flex-col">
+      <section class="flex h-[100vh] min-h-[100vh] items-center justify-between gap-5">
+        <div class="flex w-3/5 flex-col items-start gap-2">
           <h2 class="text-4xl font-bold text-white">{homeData.greetings}</h2>
-          <h1 class="text-6xl font-semibold name-gradient drop-shadow-primary">{homeData.name}</h1>
+          <h1 class="name-gradient text-6xl font-semibold drop-shadow-primary">{homeData.name}</h1>
           <div class="flex flex-col gap-4 py-8">
             {
               homeData.description.map((d) => {
-                return <p class="text-white font-inter text-base">{d}</p>;
+                return <p class="font-inter text-base text-white">{d}</p>;
               })
             }
           </div>
           <button
-            class="text-primary font-semibold rounded-full transition-colors bg-transparent my-8 py-4 px-8 border overflow-hidden hover:text-white border-primary relative button-animation">
+            class="button-animation relative my-8 overflow-hidden rounded-full border border-primary bg-transparent px-8 py-4 text-primary font-semibold transition-colors hover:text-white">
             <span class="relative z-10">Download CV</span>
           </button>
         </div>
-        <div class="flex flex-col w-1/4">
+        <div class="flex w-1/4 flex-col">
           <Image
-            class="rounded-full aspect-square object-cover"
+            class="aspect-square rounded-full object-cover"
             width="550"
             height="550"
             src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
@@ -57,15 +57,15 @@ const processedExpertise = homeData.expertise.map((e) => {
           />
         </div>
       </section>
-      <section class="flex flex-col items-center justify-center min-h-[80vh] h-[80vh]">
-        <h3 class="text-white text-4xl font-semibold">My Expertise and Interest</h3>
-        <div class="flex gap-8 pt-16 pb-8">
+      <section class="flex h-[80vh] min-h-[80vh] flex-col items-center justify-center">
+        <h3 class="text-4xl font-semibold text-white">My Expertise and Interest</h3>
+        <div class="flex gap-8 pb-8 pt-16">
           {
             processedExpertise.map((expertise) => {
               return (
                 <ExpertiseCard title={expertise.title}>
                   <div
-                    class="text-white text-base"
+                    class="text-base text-white"
                     set:html={expertise.description}
                   />
                 </ExpertiseCard>
@@ -74,7 +74,7 @@ const processedExpertise = homeData.expertise.map((e) => {
           }
         </div>
         <div class="flex w-full justify-end">
-          <div class="flex justify-center group items-center gap-2 font-light arrow-animation cursor-pointer">
+          <div class="arrow-animation group flex cursor-pointer items-center justify-center gap-2 font-light">
             <a
               href="./works"
               class="text-xl text-white">
@@ -87,24 +87,24 @@ const processedExpertise = homeData.expertise.map((e) => {
         </div>
       </section>
       <section class="flex flex-col items-center gap-12 py-16 py-32">
-        <h3 class="text-white text-4xl font-semibold">Let's Get In Touch</h3>
-        <div class="flex px-32 items-center justify-center gap-32">
-          <div class="w-1/2 text-white text-xl text-justify">
+        <h3 class="text-4xl font-semibold text-white">Let's Get In Touch</h3>
+        <div class="flex items-center justify-center gap-32 px-32">
+          <div class="w-1/2 text-justify text-xl text-white">
             {homeData.contacts.description}
           </div>
-          <div class="flex flex-col w-1/2 gap-8">
+          <div class="flex w-1/2 flex-col gap-8">
             <div
-              class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
+              class="contact-animation relative flex w-fit cursor-pointer gap-4 fill-white text-white transition-colors hover:fill-primary hover:text-primary">
               <EmailIcon />
               <span class="text-lg"> robert.wiliam12345@gmail.com </span>
             </div>
             <div
-              class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
+              class="contact-animation relative flex w-fit cursor-pointer gap-4 fill-white text-white transition-colors hover:fill-primary hover:text-primary">
               <WhatsappIcon />
               <span class="text-lg"> +62 878-8898-8754 </span>
             </div>
             <div
-              class="flex gap-4 relative contact-animation transition-colors cursor-pointer text-white fill-white hover:fill-primary hover:text-primary w-fit">
+              class="contact-animation relative flex w-fit cursor-pointer gap-4 fill-white text-white transition-colors hover:fill-primary hover:text-primary">
               <LocationIcon />
               <span class="text-lg"> Jakarta, Indonesia </span>
             </div>

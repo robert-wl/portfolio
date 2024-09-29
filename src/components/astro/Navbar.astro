@@ -19,12 +19,12 @@ const { pathname } = Astro.url;
 ---
 
 <div
-  class="flex fixed z-10 top-8 bg-primary shadow-primary-shiny text-primary shadow-primary text-white font-medium py-4 px-10 justify-between w-96 border-primary border rounded-full">
+  class="shadow-primary fixed top-8 z-10 flex w-96 justify-between rounded-full border border-primary bg-primary px-10 py-4 text-primary font-medium text-white shadow-primary-shiny max-lg:w-72">
   {
     pages.map((page) => (
       <a
         href={page.link}
-        class={cn(pathname === page.link ? "underline-active after:scale-x-100" : "", "cursor-pointer text-base relative underline-animation")}>
+        class={cn(pathname === page.link ? "underline-active after:scale-x-100" : "", "underline-animation relative cursor-pointer text-base")}>
         {page.name}
       </a>
     ))
