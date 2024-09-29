@@ -1,27 +1,32 @@
 ---
 import { Image } from "astro:assets";
 import expertImage from "src/images/dev-icon.png";
+import { cn } from "src/utils/class-name";
 
 interface Props {
   title: string;
+  className?: string;
 }
 
-const { title } = Astro.props;
+const { className, title } = Astro.props;
 ---
 
 <div
-  class="flex min-h-64 w-1/3 cursor-pointer flex-col gap-4 rounded-[2rem]  max-xl:rounded-[1rem] border border-primary max-xl:p-4 p-10 transition-all duration-300 hover:scale-105 hover:bg-[#393D46] hover:bg-opacity-50 hover:shadow-primary-shiny">
-  <div class="flex items-center gap-4 max-xl:gap-2">
+  class={cn(
+    className,
+    "flex min-h-64 aspect-square max-lg:min-h-56 max-lg:w-3/4 w-1/3 cursor-pointer flex-col gap-4 rounded-[2rem] border border-primary p-10 transition-all duration-300 hover:scale-105 hover:bg-[#393D46] hover:bg-opacity-50 hover:shadow-primary-shiny max-lg:rounded-[1rem] max-lg:p-4",
+  )}>
+  <div class="flex items-center gap-4 max-lg:gap-2">
     <Image
-      class="aspect-square w-16 max-xl:w-8 rounded-full object-cover"
+      class="aspect-square w-16 rounded-full object-cover max-lg:w-8"
       src={expertImage}
       alt="Temporary Image"
     />
-    <span class="text-3xl max-xl:text-sm font-semibold text-white">
+    <span class="text-3xl font-semibold text-white max-lg:text-sm">
       {title}
     </span>
   </div>
-  <div class="flex w-full text-base">
+  <div class="flex w-full text-base max-lg:text-2xs">
     <slot />
   </div>
 </div>

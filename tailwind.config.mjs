@@ -5,6 +5,8 @@ export default {
     extend: {
       fontSize: {
         primary: "20px",
+        "2xs": "0.625rem",
+        "3xs": "0.5rem",
       },
       fontFamily: {
         "roboto-mono": ["Roboto Mono", "monospace"],

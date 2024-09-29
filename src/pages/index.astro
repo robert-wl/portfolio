@@ -30,22 +30,22 @@ const processedExpertise = homeData.expertise.map((e) => {
   <main class="relative flex h-full min-h-[100vh] w-full min-w-[100vw] flex-col items-center">
     <Navbar />
     <SideContacts />
-    <div class="flex justify-center max-lg:w-full w-3/4 flex-col">
-      <section class="flex h-[100vh] min-h-[100vh] items-center max-lg:justify-center justify-between gap-5">
+    <div class="flex w-3/4 flex-col justify-center max-lg:w-full">
+      <section class="flex h-[100vh] min-h-[100vh] items-center justify-between gap-5 max-lg:justify-center">
         <div class="flex w-3/5 flex-col items-start gap-2">
-          <h2 class="text-4xl font-bold max-lg:text-xl text-white">{homeData.greetings}</h2>
-          <h1 class="name-gradient text-6xl max-lg:text-3xl font-semibold drop-shadow-primary">{homeData.name}</h1>
+          <h2 class="text-4xl font-bold text-white max-lg:text-xl">{homeData.greetings}</h2>
+          <h1 class="name-gradient text-6xl font-semibold drop-shadow-primary max-lg:text-3xl">{homeData.name}</h1>
           <div class="flex flex-col gap-4 py-8">
             {
               homeData.description.map((d) => {
-                return <p class="font-inter text-base max-lg:text-xs text-white">{d}</p>;
+                return <p class="font-inter text-base text-white max-lg:text-xs">{d}</p>;
               })
             }
           </div>
           <a
             href="/CV_Robert_Wiliam.pdf"
             target="_blank"
-            class="text-primary max-lg:text-xs font-semibold rounded-full transition-colors bg-transparent my-8 py-4 max-lg:py-2 px-8 max-lg:px-4 border overflow-hidden hover:text-white border-primary relative button-animation">
+            class="button-animation relative my-8 overflow-hidden rounded-full border border-primary bg-transparent px-8 py-4 text-primary font-semibold transition-colors hover:text-white max-lg:px-4 max-lg:py-2 max-lg:text-xs">
             <span class="relative z-10">Download CV</span>
           </a>
         </div>
@@ -61,13 +61,15 @@ const processedExpertise = homeData.expertise.map((e) => {
       </section>
       <section class="flex h-[80vh] min-h-[80vh] flex-col items-center justify-center">
         <h3 class="text-4xl font-semibold text-white max-lg:text-xl">My Expertise and Interest</h3>
-        <div class="flex gap-8 pb-8 pt-16">
+        <div class="flex max-w-full gap-8 pb-8 pt-16 max-lg:w-3/4 max-lg:justify-between max-lg:pt-8">
           {
-            processedExpertise.map((expertise) => {
+            processedExpertise.map((expertise, i) => {
               return (
-                <ExpertiseCard title={expertise.title}>
+                <ExpertiseCard
+                  className={i == 0 ? "max-lg:hidden" : ""}
+                  title={expertise.title}>
                   <div
-                    class="text-base max-xl:text-xs text-white"
+                    class="text-base text-white max-lg:text-2xs"
                     set:html={expertise.description}
                   />
                 </ExpertiseCard>
@@ -75,14 +77,14 @@ const processedExpertise = homeData.expertise.map((e) => {
             })
           }
         </div>
-        <div class="flex w-full justify-end">
+        <div class="flex w-full justify-end max-lg:w-2/3">
           <div class="arrow-animation group flex cursor-pointer items-center justify-center gap-2 font-light">
             <a
               href="./works"
-              class="text-xl text-white">
+              class="text-xl text-white max-lg:text-sm">
               Learn more about my works
             </a>
-            <div class="group-hover:animate-wiggle">
+            <div class="w-6 group-hover:animate-wiggle max-lg:w-4">
               <ArrowIcon />
             </div>
           </div>
@@ -90,7 +92,7 @@ const processedExpertise = homeData.expertise.map((e) => {
       </section>
       <section class="flex flex-col items-center gap-12 py-16">
         <h3 class="text-4xl font-semibold text-white">Let's Get In Touch</h3>
-        <div class="flex items-center justify-center gap-32 max-lg:px-0 px-32">
+        <div class="flex items-center justify-center gap-32 px-32 max-lg:px-0">
           <div class="w-1/2 text-justify text-xl text-white">
             {homeData.contacts.description}
           </div>
@@ -106,7 +108,7 @@ const processedExpertise = homeData.expertise.map((e) => {
               class="contact-animation relative flex w-fit cursor-pointer gap-4 fill-white text-white transition-colors hover:fill-primary hover:text-primary">
               <span class="w-4">
                 <WhatsappIcon />
-              </span> 
+              </span>
               <span class="text-lg max-lg:text-sm"> +62 878-8898-8754 </span>
             </div>
             <div
