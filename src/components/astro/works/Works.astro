@@ -23,10 +23,10 @@ const processeedDescription = stringPreprocessor(description);
 
 <section
   class={cn(
-    inverted ? "flex-row" : "flex-row-reverse",
-    "flex w-full gap-16 p-12 hover:bg-primary hover:bg-opacity-50 duration-200 rounded-2xl cursor-pointer",
+    inverted ? "flex-row max-lg:flex-col" : "flex-row-reverse max-lg:flex-col",
+    "flex w-full max-lg:gap-6 gap-16 p-12 max-lg:p-2 hover:bg-primary hover:bg-opacity-50 duration-200 rounded-2xl cursor-pointer",
   )}>
-  <div class="flex w-[45%] flex-col gap-2">
+  <div class="flex w-[45%] max-lg:w-full flex-col gap-2">
     <div class="w-full">
       {
         imageUrl.length > 0 && (
@@ -43,11 +43,11 @@ const processeedDescription = stringPreprocessor(description);
     </div>
     {
       imageUrl.length > 1 && (
-        <div class={cn("flex w-full gap-4", imageUrl.length > 3 ? "justify-between" : "justify-start")}>
+        <div class={cn("flex w-full gap-4 max-lg:gap-2", imageUrl.length > 3 ? "justify-between" : "justify-start")}>
           {imageUrl.slice(1).map(async (url) => {
             return (
               <InteractiveImage
-                class="h-92 w-[31%] cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
+                class="w-[31%] cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
                 width={550}
                 height={850}
                 rawSrc={url}
@@ -60,17 +60,17 @@ const processeedDescription = stringPreprocessor(description);
       )
     }
   </div>
-  <div class="flex w-[55%] flex-col items-start justify-center">
+  <div class="flex w-[55%] max-lg:w-full flex-col items-start justify-center">
     {
       isLive && (
         <div class="relative flex items-center">
           <span class="absolute -left-0.5 inline-flex h-4 w-4 animate-ping rounded-full bg-red-500 opacity-75" />
           <span class="relative inline-flex h-3 w-3 rounded-full bg-red-500" />
-          <p class="ps-3 text-base text-white">LIVE</p>
+          <p class="ps-3 text-base max-lg:text-sm text-white">LIVE</p>
         </div>
       )
     }
-    <h4 class="flex items-center gap-2 text-3xl font-semibold text-white">
+    <h4 class="flex items-center gap-2 max-lg:text-lg text-3xl font-semibold text-white">
       <span class="pe-4">{title}</span>
       {
         githubUrl?.map((url) => {
@@ -78,7 +78,7 @@ const processeedDescription = stringPreprocessor(description);
             <a
               target="_blank"
               href={url}
-              class="cursor-pointer stroke-white transition-colors hover:stroke-primary">
+              class="cursor-pointer w-8 max-lg:w-6 stroke-white transition-colors hover:stroke-primary">
               <GithubLineIcon />
             </a>
           );
@@ -89,22 +89,22 @@ const processeedDescription = stringPreprocessor(description);
           <a
             target="_blank"
             href={projectUrl}
-            class="cursor-pointer stroke-white transition-colors hover:stroke-primary">
+            class="cursor-pointer w-8 max-lg:w-6 stroke-white transition-colors hover:stroke-primary">
             <RedirectLineIcon />
           </a>
         )
       }
     </h4>
-    <p class="text-gray-500">{date}</p>
+    <p class="text-gray-500 max-lg:text-sm">{date}</p>
     <p
-      class="py-4 text-base text-white"
+      class="py-4 text-base max-lg:text-xs text-white"
       set:html={processeedDescription}
     />
-    <div class="flex flex-wrap gap-4 pt-4">
+    <div class="flex flex-wrap max-lg:gap-2 gap-4 pt-4">
       {
         techStack.map((tech) => {
           return (
-            <span class="text-nowrap rounded-full bg-[#00ADB4] bg-opacity-20 px-4 py-0.5 font-roboto-mono text-primary text-sm transition-transform hover:scale-110">
+            <span class="flex items-center justify-center text-nowrap rounded-full text-center bg-[#00ADB4] bg-opacity-20 max-lg:px-2 px-4 py-0.5 font-roboto-mono text-primary text-sm max-lg:text-xs transition-transform hover:scale-110">
               {tech}
             </span>
           );
