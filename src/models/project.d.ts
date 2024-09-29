@@ -6,5 +6,6 @@ export interface IProject {
   githubUrl?: string[];
   projectUrl?: string;
   imageUrl: string[];
+  isCollaborative: boolean;
   isLive: boolean;
 }

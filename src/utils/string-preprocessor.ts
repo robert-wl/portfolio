@@ -2,6 +2,8 @@ export default function stringPreprocessor(text: string) {
   text = text
     .replaceAll("[", "<span class='text-primary text-base max-lg:text-xs font-semibold'>")
     .replaceAll("]", "</span>")
+    .replaceAll("{", "<span class='font-bold'>")
+    .replaceAll("}", "</span>")
     .replaceAll("\n", "<br>");
 
   if (text.startsWith(":")) return "<ul>";

@@ -13,7 +13,7 @@ interface Props {
 }
 
 const {
-  data: { title, date, description, techStack, imageUrl, githubUrl, projectUrl, isLive },
+  data: { title, date, description, techStack, imageUrl, githubUrl, projectUrl, isLive, isCollaborative },
   inverted,
 } = Astro.props;
 
@@ -47,7 +47,7 @@ const processeedDescription = stringPreprocessor(description);
           {imageUrl.slice(1).map(async (url) => {
             return (
               <InteractiveImage
-                class="w-[31%] cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
+                class="w-[31%] cursor-pointer rounded-lg object-cover transition-transform hover:scale-[102%]"
                 width={550}
                 height={850}
                 rawSrc={url}
@@ -70,7 +70,7 @@ const processeedDescription = stringPreprocessor(description);
         </div>
       )
     }
-    <h4 class="flex items-center gap-2 max-lg:text-lg text-3xl font-semibold text-white">
+    <h4 class="flex items-center gap-2 max-lg:gap-1 max-lg:text-lg text-3xl font-semibold text-white">
       <span class="pe-4">{title}</span>
       {
         githubUrl?.map((url) => {
@@ -78,7 +78,7 @@ const processeedDescription = stringPreprocessor(description);
             <a
               target="_blank"
               href={url}
-              class="cursor-pointer w-8 max-lg:w-6 stroke-white transition-colors hover:stroke-primary">
+              class="cursor-pointer w-8 max-lg:w-6 max-lg:min-w-6 stroke-white transition-colors hover:stroke-primary">
               <GithubLineIcon />
             </a>
           );
@@ -89,14 +89,14 @@ const processeedDescription = stringPreprocessor(description);
           <a
             target="_blank"
             href={projectUrl}
-            class="cursor-pointer w-8 max-lg:w-6 stroke-white transition-colors hover:stroke-primary">
+            class="cursor-pointer w-8 max-lg:w-6 max-lg:min-w-6 stroke-white transition-colors hover:stroke-primary">
             <RedirectLineIcon />
           </a>
         )
       }
     </h4>
-    <p class="text-gray-500 max-lg:text-sm">{date}</p>
-    <p
+    <p class="text-gray-500 max-lg:text-sm pb-4">{date} - {isCollaborative ? "Collaborative" : "Personal"}</p>
+    <Fragment
       class="py-4 text-base max-lg:text-xs text-white"
       set:html={processeedDescription}
     />

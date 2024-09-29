@@ -16,6 +16,7 @@ export const professionalWorksData: IProject[] = [
       "/works/professional/hyper-wlight-drifter/image-3.png",
       "/works/professional/hyper-wlight-drifter/image-4.png",
     ],
+    isCollaborative: false,
     isLive: true,
   },
   {
@@ -31,6 +32,7 @@ export const professionalWorksData: IProject[] = [
       "/works/professional/register-nar/image-2.png",
       "/works/professional/register-nar/image-3.png",
     ],
+    isCollaborative: false,
     isLive: true,
   },
 ];
@@ -52,6 +54,7 @@ export const personalWorksData: IProject[] = [
       "/works/personal/hireverse/image-3.png",
       "/works/personal/hireverse/image-4.png",
     ],
+    isCollaborative: true,
     isLive: false,
   },
   {
@@ -69,6 +72,7 @@ export const personalWorksData: IProject[] = [
       "/works/personal/facebook-clone/image-3.png",
       "/works/personal/facebook-clone/image-4.png",
     ],
+    isCollaborative: false,
     isLive: true,
   },
   {
@@ -86,6 +90,7 @@ export const personalWorksData: IProject[] = [
       "/works/personal/verdant-seed/image-3.png",
       "/works/personal/verdant-seed/image-4.png",
     ],
+    isCollaborative: true,
     isLive: false,
   },
   {
@@ -104,6 +109,7 @@ export const personalWorksData: IProject[] = [
       "/works/personal/hand-sign-recognizer/image-3.png",
       "/works/personal/hand-sign-recognizer/image-4.png",
     ],
+    isCollaborative: false,
     isLive: false,
   },
   {
@@ -120,6 +126,7 @@ export const personalWorksData: IProject[] = [
       "/works/personal/nutrifitpal/image-3.png",
       "/works/personal/nutrifitpal/image-4.png",
     ],
+    isCollaborative: true,
     isLive: false,
   },
   {
@@ -131,6 +138,7 @@ export const personalWorksData: IProject[] = [
     techStack: ["Java", "JavaFX"],
     githubUrl: ["https://github.com/robert-wl/junimo-kart-clone"],
     imageUrl: ["/works/personal/junimo-kart-clone/image-1.png"],
+    isCollaborative: false,
     isLive: false,
   },
   {
@@ -143,6 +151,7 @@ export const personalWorksData: IProject[] = [
     techStack: ["ReactJS", "TensorflowJS", "MediaPipe"],
     githubUrl: ["https://github.com/robert-wl/AIGestureMind"],
     imageUrl: ["/works/personal/gesture-mind/image-1.png", "/works/personal/gesture-mind/image-2.png"],
+    isCollaborative: true,
     isLive: false,
   },
 ];
