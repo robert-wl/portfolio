@@ -42,7 +42,8 @@ const processedDescription = data.description.map(stringPreprocessor).join("");
                   class="cursor-pointer rounded-3xl object-cover transition-transform hover:scale-[102%]"
                   width={250}
                   height={50}
-                  src={imageReader(image.src)}
+                  rawSrc={image.src}
+                  src={imageReader(image.src)!}
                   alt={image.alt}
                 />
                 <span class="text-base text-white text-opacity-50">{image.description}</span>

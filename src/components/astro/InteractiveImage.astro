@@ -1,14 +1,19 @@
 ---
 import { Image } from "astro:assets";
 interface Props {
-  src: string;
+  src: Promise<{
+    default: ImageMetadata;
+  }>;
+  rawSrc: string;
   class?: string;
   width: number;
   height: number;
   alt?: string;
 }
 
-const { src, class: className, width, height, alt } = Astro.props;
+const { src, rawSrc, class: className, width, height, alt } = Astro.props;
+
+console.log("SRC DATA", src)
 ---
 
 <Image
@@ -17,16 +22,16 @@ const { src, class: className, width, height, alt } = Astro.props;
   height={height}
   src={src}
   alt={alt}
-  onclick={`document.getElementById('fullscreen-dialog-${src}').showModal()`}
+  onclick={`document.getElementById('fullscreen-dialog-${rawSrc}').showModal()`}
 />
 
 <dialog
-  id=`fullscreen-dialog-${src}`
+  id=`fullscreen-dialog-${rawSrc}`
   onclick="this.close()"
   class="h-fit w-3/4 overflow-hidden">
-  <img
+  <Image
     class="h-full w-full rounded-xl border-0 object-cover outline-0"
-    src={src}
+    src={src ?? ""}
     alt={alt}
   />
 </dialog>

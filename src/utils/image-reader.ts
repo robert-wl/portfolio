@@ -6,5 +6,5 @@ export default function imageReader(path: string) {
   if (!images[`/src/assets${path}`]) {
     throw new Error(`Image not found: ${path}`);
   }
-  return images[`/src/assets${path}`]?.() as unknown as string;
+  return images[`/src/assets${path}`]?.();
 }

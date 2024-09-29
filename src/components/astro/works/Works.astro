@@ -18,6 +18,7 @@ const {
 } = Astro.props;
 
 const processeedDescription = stringPreprocessor(description);
+
 ---
 
 <section
@@ -33,7 +34,8 @@ const processeedDescription = stringPreprocessor(description);
             class="w-full cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
             width={550}
             height={850}
-            src={imageReader(imageUrl[0]!)}
+            rawSrc={imageUrl[0]!}
+            src={imageReader(imageUrl[0]!)!}
             alt="Temporary Image"
           />
         )
@@ -42,13 +44,14 @@ const processeedDescription = stringPreprocessor(description);
     {
       imageUrl.length > 1 && (
         <div class={cn("flex w-full gap-4", imageUrl.length > 3 ? "justify-between" : "justify-start")}>
-          {imageUrl.slice(1).map((url) => {
+          {imageUrl.slice(1).map(async (url) => {
             return (
               <InteractiveImage
                 class="h-92 w-[31%] cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
                 width={550}
                 height={850}
-                src={imageReader(url)}
+                rawSrc={url}
+                src={imageReader(url)!}
                 alt="Temporary Image"
               />
             );
