@@ -19,17 +19,37 @@ const { pathname } = Astro.url;
 ---
 
 <div
-  class="shadow-primary fixed top-8 z-10 flex w-96 justify-between rounded-full border border-primary bg-primary max-lg:px-8 max-lg:py-3 px-10 py-4 text-primary font-medium text-white shadow-primary-shiny max-lg:w-64">
+  id="navbar"
+  style="top: 2rem"
+  class="shadow-primary fixed z-10 flex w-96 justify-between rounded-full border border-primary bg-primary px-10 py-4 text-primary font-medium text-white shadow-primary-shiny transition-all max-lg:w-64 max-lg:px-8 max-lg:py-3">
   {
     pages.map((page) => (
       <a
         href={page.link}
-        class={cn(pathname === page.link ? "underline-active after:scale-x-100" : "", "underline-animation relative cursor-pointer text-base max-lg:text-xs")}>
+        class={cn(
+          pathname === page.link ? "underline-active after:scale-x-100" : "",
+          "underline-animation relative cursor-pointer text-base max-lg:text-xs",
+        )}>
         {page.name}
       </a>
     ))
   }
 </div>
+
+<script>
+  const navbar = document.getElementById("navbar")!;
+  let lastScrollTop = 0;
+  document.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop < lastScrollTop) {
+      navbar.style.top = "2rem";
+    } else {
+      navbar.style.top = "-8rem";
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+</script>
 
 <style>
   .underline-animation::after {
