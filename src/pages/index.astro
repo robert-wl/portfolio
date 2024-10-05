@@ -32,20 +32,20 @@ const processedExpertise = homeData.expertise.map((e) => {
     <SideContacts />
     <div class="flex w-3/4 flex-col justify-center max-lg:w-full">
       <section class="flex h-[100vh] min-h-[100vh] items-center justify-between gap-5 max-lg:justify-center">
-        <div class="flex w-3/5 flex-col items-start gap-2">
-          <h2 class="text-4xl font-bold text-white max-lg:text-xl">{homeData.greetings}</h2>
-          <h1 class="name-gradient text-6xl font-semibold drop-shadow-primary max-lg:text-3xl">{homeData.name}</h1>
-          <div class="flex flex-col gap-4 py-8">
+        <div class="flex w-3/5 flex-col items-start gap-2 max-lg:w-4/5 max-lg:items-center">
+          <h2 class="w-full text-4xl font-bold text-white max-lg:text-center max-lg:text-xl">{homeData.greetings}</h2>
+          <h1 class="name-gradient w-full text-6xl font-semibold drop-shadow-primary max-lg:text-center max-lg:text-3xl">{homeData.name}</h1>
+          <div class="flex flex-col gap-4 py-8 max-lg:px-4">
             {
               homeData.description.map((d) => {
-                return <p class="font-inter text-base text-white max-lg:text-xs">{d}</p>;
+                return <p class="font-inter text-base text-white max-lg:text-justify max-lg:text-xs">{d}</p>;
               })
             }
           </div>
           <a
             href="/CV_Robert_Wiliam.pdf"
             target="_blank"
-            class="button-animation relative my-8 overflow-hidden rounded-full border border-primary bg-transparent px-8 py-4 text-primary font-semibold transition-colors hover:text-white max-lg:px-4 max-lg:py-2 max-lg:text-xs">
+            class="button-animation relative my-8 overflow-hidden rounded-full border border-primary bg-transparent px-8 py-4 text-primary font-semibold transition-colors hover:text-white max-lg:my-0 max-lg:px-4 max-lg:py-2 max-lg:text-justify max-lg:text-xs">
             <span class="relative z-10">Download CV</span>
           </a>
         </div>
@@ -59,15 +59,13 @@ const processedExpertise = homeData.expertise.map((e) => {
           />
         </div>
       </section>
-      <section class="flex h-[80vh] min-h-[80vh] flex-col items-center justify-center">
+      <section class="flex h-[80vh] min-h-[80vh] flex-col items-center justify-center max-lg:h-fit">
         <h3 class="text-4xl font-semibold text-white max-lg:text-xl">My Expertise and Interest</h3>
-        <div class="flex max-w-full gap-8 pb-8 pt-16 max-lg:w-3/4 max-lg:justify-between max-lg:pt-8">
+        <div class="flex max-w-full gap-8 pb-8 pt-16 max-lg:w-3/4 max-lg:flex-col max-lg:items-center max-lg:justify-center max-lg:pt-8">
           {
-            processedExpertise.map((expertise, i) => {
+            processedExpertise.map((expertise) => {
               return (
-                <ExpertiseCard
-                  className={i == 0 ? "max-lg:hidden" : ""}
-                  title={expertise.title}>
+                <ExpertiseCard title={expertise.title}>
                   <div
                     class="text-base text-white max-lg:text-2xs"
                     set:html={expertise.description}
@@ -77,7 +75,7 @@ const processedExpertise = homeData.expertise.map((e) => {
             })
           }
         </div>
-        <div class="flex w-full justify-end max-lg:w-2/3">
+        <div class="flex w-full justify-end max-lg:w-2/3 max-lg:justify-center">
           <div class="arrow-animation group flex cursor-pointer items-center justify-center gap-2 font-light">
             <a
               href="./works"
@@ -90,33 +88,34 @@ const processedExpertise = homeData.expertise.map((e) => {
           </div>
         </div>
       </section>
-      <section class="flex flex-col items-center gap-12 py-16">
-        <h3 class="text-4xl font-semibold text-white">Let's Get In Touch</h3>
-        <div class="flex items-center justify-center gap-32 px-32 max-lg:px-0">
-          <div class="w-1/2 text-justify text-xl text-white">
+      <section class="flex flex-col items-center gap-12 py-16 max-lg:gap-6">
+        <h3 class="text-4xl font-semibold text-white max-lg:text-xl">Let's Get In Touch</h3>
+        <div
+          class="flex items-start justify-center gap-32 px-64 max-2xl:px-32 max-xl:px-16 max-lg:flex-col max-lg:items-center max-lg:gap-8 max-lg:px-4">
+          <div class="w-1/2 text-xl text-white max-lg:w-3/4 max-lg:text-justify max-lg:text-xs">
             {homeData.contacts.description}
           </div>
-          <div class="flex w-1/2 flex-col gap-8">
+          <div class="flex w-1/2 flex-col gap-8 max-lg:w-2/3 max-lg:gap-3">
             <div
               class="contact-animation relative flex w-fit cursor-pointer gap-4 fill-white text-white transition-colors hover:fill-primary hover:text-primary">
-              <span class="w-4">
+              <span class="w-8 max-lg:w-5">
                 <EmailIcon />
               </span>
-              <span class="text-lg max-lg:text-sm"> robert.wiliam12345@gmail.com </span>
+              <span class="text-lg max-lg:text-xs"> robert.wiliam12345@gmail.com </span>
             </div>
             <div
               class="contact-animation relative flex w-fit cursor-pointer gap-4 fill-white text-white transition-colors hover:fill-primary hover:text-primary">
-              <span class="w-4">
+              <span class="w-8 max-lg:w-5">
                 <WhatsappIcon />
               </span>
-              <span class="text-lg max-lg:text-sm"> +62 878-8898-8754 </span>
+              <span class="text-lg max-lg:text-xs"> +62 878-8898-8754 </span>
             </div>
             <div
               class="contact-animation relative flex w-fit cursor-pointer gap-4 fill-white text-white transition-colors hover:fill-primary hover:text-primary">
-              <span class="w-4">
+              <span class="w-8 max-lg:w-5">
                 <LocationIcon />
               </span>
-              <span class="text-lg max-lg:text-sm"> Jakarta, Indonesia </span>
+              <span class="text-lg max-lg:text-xs"> Jakarta, Indonesia </span>
             </div>
           </div>
         </div>
