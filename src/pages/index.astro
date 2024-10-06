@@ -14,6 +14,7 @@ import HorizontalContacts from "../components/astro/HorizontalContacts.astro";
 import stringPreprocessor from "../utils/string-preprocessor";
 import { StarsBackground } from "../components/react/aceternity/stars-background";
 import { ShootingStars } from "../components/react/aceternity/shooting-stars";
+import imageReader from "../utils/image-reader";
 
 const processedExpertise = homeData.expertise.map((e) => {
   const description = stringPreprocessor(e.description);
@@ -54,7 +55,7 @@ const processedExpertise = homeData.expertise.map((e) => {
             class="aspect-square rounded-full object-cover"
             width="550"
             height="550"
-            src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
+            src={imageReader("/home/profile.jpg")!}
             alt="Temporary Image"
           />
         </div>
