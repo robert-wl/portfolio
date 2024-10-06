@@ -1,35 +1,33 @@
 ---
 import { Image } from "astro:assets";
+import imageReader from "../../utils/image-reader";
 interface Props {
-  src: Promise<{
-    default: ImageMetadata;
-  }>;
-  rawSrc: string;
+  src: string;
   class?: string;
   width: number;
   height: number;
   alt?: string;
 }
 
-const { src, rawSrc, class: className, width, height, alt } = Astro.props;
+const { src = "", class: className, width, height, alt } = Astro.props;
 ---
 
 <Image
   class={className}
   width={width}
   height={height}
-  src={src}
+  src={imageReader(src)!}
   alt={alt}
-  onclick={`document.getElementById('fullscreen-dialog-${rawSrc}').showModal()`}
+  onclick={`document.getElementById('fullscreen-dialog-${src}').showModal()`}
 />
 
 <dialog
-  id=`fullscreen-dialog-${rawSrc}`
+  id=`fullscreen-dialog-${src}`
   onclick="this.close()"
   class="h-fit w-3/4 overflow-hidden">
   <Image
     class="h-full w-full rounded-xl border-0 object-cover outline-0"
-    src={src ?? ""}
+    src={imageReader(src)!}
     alt={alt}
   />
 </dialog>

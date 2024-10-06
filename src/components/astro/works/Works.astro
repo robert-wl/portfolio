@@ -5,7 +5,6 @@ import GithubLineIcon from "../icons/GithubLineIcon.astro";
 import RedirectLineIcon from "../icons/RedirectLineIcon.astro";
 import stringPreprocessor from "../../../utils/string-preprocessor";
 import InteractiveImage from "../InteractiveImage.astro";
-import imageReader from "../../../utils/image-reader";
 
 interface Props {
   data: IProject;
@@ -18,7 +17,6 @@ const {
 } = Astro.props;
 
 const processeedDescription = stringPreprocessor(description);
-
 ---
 
 <section
@@ -26,7 +24,7 @@ const processeedDescription = stringPreprocessor(description);
     inverted ? "flex-row max-lg:flex-col" : "flex-row-reverse max-lg:flex-col",
     "flex w-full max-lg:gap-6 gap-16 p-12 max-lg:p-2 hover:bg-primary hover:bg-opacity-50 duration-200 rounded-2xl cursor-pointer",
   )}>
-  <div class="flex w-[45%] max-lg:w-full flex-col gap-2">
+  <div class="flex w-[45%] flex-col gap-2 max-lg:w-full">
     <div class="w-full">
       {
         imageUrl.length > 0 && (
@@ -34,8 +32,7 @@ const processeedDescription = stringPreprocessor(description);
             class="w-full cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
             width={550}
             height={850}
-            rawSrc={imageUrl[0]!}
-            src={imageReader(imageUrl[0]!)!}
+            src={imageUrl[0]!}
             alt="Temporary Image"
           />
         )
@@ -50,8 +47,7 @@ const processeedDescription = stringPreprocessor(description);
                 class="w-[31%] cursor-pointer rounded-lg object-cover transition-transform hover:scale-[102%]"
                 width={550}
                 height={850}
-                rawSrc={url}
-                src={imageReader(url)!}
+                src={url}
                 alt="Temporary Image"
               />
             );
@@ -60,17 +56,17 @@ const processeedDescription = stringPreprocessor(description);
       )
     }
   </div>
-  <div class="flex w-[55%] max-lg:w-full flex-col items-start justify-center">
+  <div class="flex w-[55%] flex-col items-start justify-center max-lg:w-full">
     {
       isLive && (
         <div class="relative flex items-center">
           <span class="absolute -left-0.5 inline-flex h-4 w-4 animate-ping rounded-full bg-red-500 opacity-75" />
           <span class="relative inline-flex h-3 w-3 rounded-full bg-red-500" />
-          <p class="ps-3 text-base max-lg:text-sm text-white">LIVE</p>
+          <p class="ps-3 text-base text-white max-lg:text-sm">LIVE</p>
         </div>
       )
     }
-    <h4 class="flex items-center gap-2 max-lg:gap-1 max-lg:text-lg text-3xl font-semibold text-white">
+    <h4 class="flex items-center gap-2 text-3xl font-semibold text-white max-lg:gap-1 max-lg:text-lg">
       <span class="pe-4">{title}</span>
       {
         githubUrl?.map((url) => {
@@ -78,7 +74,7 @@ const processeedDescription = stringPreprocessor(description);
             <a
               target="_blank"
               href={url}
-              class="cursor-pointer w-8 max-lg:w-6 max-lg:min-w-6 stroke-white transition-colors hover:stroke-primary">
+              class="w-8 cursor-pointer stroke-white transition-colors hover:stroke-primary max-lg:w-6 max-lg:min-w-6">
               <GithubLineIcon />
             </a>
           );
@@ -89,22 +85,22 @@ const processeedDescription = stringPreprocessor(description);
           <a
             target="_blank"
             href={projectUrl}
-            class="cursor-pointer w-8 max-lg:w-6 max-lg:min-w-6 stroke-white transition-colors hover:stroke-primary">
+            class="w-8 cursor-pointer stroke-white transition-colors hover:stroke-primary max-lg:w-6 max-lg:min-w-6">
             <RedirectLineIcon />
           </a>
         )
       }
     </h4>
-    <p class="text-gray-500 max-lg:text-sm pb-4">{date} - {isCollaborative ? "Collaborative" : "Personal"}</p>
+    <p class="pb-4 text-gray-500 max-lg:text-sm">{date} - {isCollaborative ? "Collaborative" : "Personal"}</p>
     <Fragment
       class="py-4 text-base max-lg:text-xs text-white"
       set:html={processeedDescription}
     />
-    <div class="flex flex-wrap max-lg:gap-2 gap-4 pt-4">
+    <div class="flex flex-wrap gap-4 pt-4 max-lg:gap-2">
       {
         techStack.map((tech) => {
           return (
-            <span class="flex items-center justify-center text-nowrap rounded-full text-center bg-[#00ADB4] bg-opacity-20 max-lg:px-2 px-4 py-0.5 font-roboto-mono text-primary text-sm max-lg:text-xs transition-transform hover:scale-110">
+            <span class="flex items-center justify-center text-nowrap rounded-full bg-[#00ADB4] bg-opacity-20 px-4 py-0.5 text-center font-roboto-mono text-primary text-sm transition-transform hover:scale-110 max-lg:px-2 max-lg:text-xs">
               {tech}
             </span>
           );

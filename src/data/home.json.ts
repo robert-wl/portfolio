@@ -2,7 +2,7 @@ const homeData = {
   greetings: "Hello, my name is",
   name: "Robert Wiliam",
   description: [
-    "Hi there! I’m Robert Wiliam, an undergraduate computer science student with interests in software development, artificial intelligence, and web technologies. I enjoy tackling challenging problems and building innovative solutions that make a difference.",
+    "Hi there! I’m Robert Wiliam, an undergraduate computer science student with interests in software development, artificial intelligence, devOps, and web technologies. I enjoy tackling challenging problems and building innovative solutions that make a difference.",
     "I have had the opportunity to work on a variety of projects, where I’ve applied my skills in coding and problem-solving. I’m always eager to learn new technologies and improve my craft, whether it's through personal or professional projects.",
   ],
   expertise: [
