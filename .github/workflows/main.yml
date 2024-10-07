@@ -16,14 +16,16 @@ jobs:
 
       - name: Build and Docker images
         run: |
-          docker build . -t yahkerobertkertasnya/portfolio:raw
+          docker build . -t yahkerobertkertasnya/portfolio:latest
 
       - name: Run Docker-Slim
         uses: kitabisa/docker-slim-action@v1
         env:
           DSLIM_HTTP_PROBE: false
+          DSLIM_INCLUDE_PATH: /app/dist
         with:
-          target: yahkerobertkertasnya/portfolio:raw
+          overwrite: true
+          target: yahkerobertkertasnya/portfolio:latest
           tag: "latest"
 
       - name: Login to DockerHub
