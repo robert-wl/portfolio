@@ -1,6 +1,5 @@
-version: '3.8'
 services:
-  backend:
+  portfolio:
     image: yahkerobertkertasnya/portfolio:latest
     container_name: portfolio-wl
     tty: true
