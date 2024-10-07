@@ -16,7 +16,7 @@ const {
   inverted,
 } = Astro.props;
 
-const processeedDescription = stringPreprocessor(description);
+const processedDescription = stringPreprocessor(description);
 ---
 
 <section
@@ -31,7 +31,7 @@ const processeedDescription = stringPreprocessor(description);
           <InteractiveImage
             class="w-full cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
             width={550}
-            height={850}
+            height={350}
             src={imageUrl[0]!}
             alt="Temporary Image"
           />
@@ -46,7 +46,7 @@ const processeedDescription = stringPreprocessor(description);
               <InteractiveImage
                 class="w-[31%] cursor-pointer rounded-lg object-cover transition-transform hover:scale-[102%]"
                 width={550}
-                height={850}
+                height={250}
                 src={url}
                 alt="Temporary Image"
               />
@@ -94,7 +94,7 @@ const processeedDescription = stringPreprocessor(description);
     <p class="pb-4 text-gray-500 max-lg:text-sm">{date} - {isCollaborative ? "Collaborative" : "Personal"}</p>
     <Fragment
       class="py-4 text-base max-lg:text-xs text-white"
-      set:html={processeedDescription}
+      set:html={processedDescription}
     />
     <div class="flex flex-wrap gap-4 pt-4 max-lg:gap-2">
       {
