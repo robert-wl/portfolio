@@ -10,7 +10,7 @@ interface ShootingStar {
   scale: number;
   speed: number;
   distance: number;
-  lifetime: number; // Add lifetime property
+  lifetime: number;
 }
 
 interface ShootingStarsProps {
