@@ -23,13 +23,13 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           push: false
-          tags: yahkerobertkertasnya/portfolio:latest
+          tags: yahkerobertkertasnya/portfolio:raw
 
       - uses: kitabisa/docker-slim-action@v1
         env:
           DSLIM_HTTP_PROBE: false
         with:
-          target: yahkerobertkertasnya/portfolio:latest
+          target: yahkerobertkertasnya/portfolio:raw
           tag: "latest"
 
       - name: Push Docker images
