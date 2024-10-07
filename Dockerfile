@@ -1,13 +1,28 @@
-FROM node:lts AS runtime
+FROM node:lts AS builder
+
+ENV NODE_ENV=production
 WORKDIR /app
 
+COPY package*.json pnpm-lock.yaml ./
+RUN npm install -g pnpm && \
+    pnpm install --frozen-lockfile
+
 COPY . .
+RUN pnpm build
 
-RUN npm install
-RUN npm run build
+FROM node:alpine AS runtime
 
+WORKDIR /app
+
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/pnpm-lock.yaml ./
+
+RUN npm install -g pnpm && \
+    pnpm install --frozen-lockfile --prod
 
 ENV HOST=0.0.0.0
 ENV PORT=4321
+
 EXPOSE 4321
-CMD ["node",  "./dist/server/entry.mjs"]
+CMD ["node", "dist/server/entry.mjs"]
