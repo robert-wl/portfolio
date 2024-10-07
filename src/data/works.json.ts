@@ -65,7 +65,7 @@ export const personalWorksData: IProject[] = [
     date: "July 2023",
     techStack: ["ReactJS", "Typescript", "SCSS", "Go Lang", "GraphQL", "Redis", "PostgreSQL"],
     githubUrl: ["https://github.com/robert-wl/facebook-clone-backend", "https://github.com/robert-wl/facebook-clone-frontend"],
-    projectUrl: "http://yahkerobertkertasnya.my.id/facebook",
+    projectUrl: "http://robertwl.my.id/facebook",
     imageUrl: [
       "/works/personal/facebook-clone/image-1.png",
       "/works/personal/facebook-clone/image-2.png",
