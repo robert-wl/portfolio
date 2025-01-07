@@ -18,16 +18,6 @@ jobs:
         run: |
           docker build . -t yahkerobertkertasnya/portfolio:latest
 
-      - name: Run Docker-Slim
-        uses: kitabisa/docker-slim-action@v1
-        env:
-          DSLIM_HTTP_PROBE: false
-          DSLIM_INCLUDE_PATH: /app
-        with:
-          overwrite: true
-          target: yahkerobertkertasnya/portfolio:latest
-          tag: "latest"
-
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
@@ -36,7 +26,7 @@ jobs:
 
       - name: Push Docker images
         run: |
-          docker push yahkerobertkertasnya/portfolio
+          docker push yahkerobertkertasnya/portfolio:latest
 
   pull-and-deploy:
     runs-on: ubuntu-latest
