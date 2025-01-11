@@ -25,7 +25,7 @@ export const professionalWorksData: IProject[] = [
       "A web-based application used by new Binusian students to register as an assistant in the Software Laboratory Center. " +
       "The project was developed using [NextJS], and [.NET] as the backend. ",
     date: "July 2024",
-    techStack: ["NextJS", "shadcn/ui", "C#", "ASP.NET Core", "SQL Server"],
+    techStack: ["React", "NextJS", "Typescript", "shadcn/ui", "C#", "ASP.NET Core", "SQL Server"],
     projectUrl: "https://bluejack.binus.ac.id/nar/",
     imageUrl: [
       "/works/professional/register-nar/image-1.png",
@@ -34,6 +34,33 @@ export const professionalWorksData: IProject[] = [
     ],
     isCollaborative: false,
     isLive: true,
+  },
+  {
+    title: "RnD Monitoring",
+    description:
+      "A monitoring system for the Research and Development team at Binus University. " +
+      "The system is designed to monitor the team's projects and services, capable of sending alerts and notifications. " +
+      "The project was developed using [Prometheus Stack], and is built with Infrastructure as Code (IaC) principles. ",
+    date: "January 2025",
+    techStack: ["Prometheus", "Grafana", "Blackbox", "Alertmanager", "Docker", "Github Actions"],
+    imageUrl: [
+      "/works/professional/rdt-monitoring/image-1.png",
+      "/works/professional/rdt-monitoring/image-2.png",
+      "/works/professional/rdt-monitoring/image-3.png",
+    ],
+    isCollaborative: false,
+    isLive: false,
+  },
+  {
+    title: "Voyager",
+    description:
+      "An internal application used for managing Software Laboratory Center's attendances, meetings and report" +
+      "The application is primarily used by internal officers. The project was developed using [SvelteKit], [Java Spring Boot], and [PostgreSQL]. ",
+    date: "December 2024",
+    techStack: ["Svelte", "SvelteKit", "Java", "Spring Boot", "PostgreSQL"],
+    imageUrl: ["/works/professional/voyager/image-1.png"],
+    isCollaborative: true,
+    isLive: false,
   },
 ];
 
