@@ -12,6 +12,8 @@ const experienceData: IExperience[] = [
       "- {Maintaining Web Applications}: I maintain web applications built using [Angular], [React], [Next.js], and the [.NET] stack. I work in teams of four to manage laboratory practicum and operational activities. These applications handle up to 500 concurrent users and have an average of 2,500 daily active users combined.",
       "- {Feature Requests and Issue Resolution}: I handle feature requests, address issues, fix bugs, and resolve other problems related to maintained web applications.",
       "- {Development of New Applications}: I develop new web applications for Software Laboratory Center that serve as a registration platform for BINUS University students, as well as for our internal staff and officers to manage new laboratory assistant registrations.",
+      "- {Development of New Deployment Architecture}: I revolutionized Software Laboratory Center deployment of applications by containerizing new applications using [Docker]. I also implemented a new [CI/CD] pipeline system using [Github Actions], [Harbor Registry], [Hashicorp Vault] to allow for the automatic testing, building and deployment directly from version control.",
+      "- {Development of New Monitoring Systems}: I implemented monitoring systems to track and manage resource usage of Software Laboratory Center applications. Automatic alerts are sent to the team when the system detects abnormal behavior. Everything is built using the [Prometheus] stack ([Prometheus], [Grafana], [Blackbox], [Alertmanager]).",
       ";",
     ],
     imageUrls: [],
