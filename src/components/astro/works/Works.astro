@@ -29,7 +29,7 @@ const processedDescription = stringPreprocessor(description);
       {
         imageUrl.length > 0 && (
           <InteractiveImage
-            class="w-full cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
+            class="max-h-64 w-full cursor-pointer rounded-xl object-cover transition-transform hover:scale-[102%]"
             width={550}
             height={350}
             src={imageUrl[0]!}
@@ -44,7 +44,7 @@ const processedDescription = stringPreprocessor(description);
           {imageUrl.slice(1).map(async (url) => {
             return (
               <InteractiveImage
-                class="w-[31%] cursor-pointer rounded-lg object-cover transition-transform hover:scale-[102%]"
+                class="max-h-32 w-[31%] cursor-pointer rounded-lg object-cover transition-transform hover:scale-[102%]"
                 width={550}
                 height={250}
                 src={url}

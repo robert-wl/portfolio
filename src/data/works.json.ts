@@ -76,6 +76,23 @@ export const personalWorksData: IProject[] = [
     isLive: true,
   },
   {
+    title: "SplanNGo",
+    description:
+      "SplanNGo is a website designed to facilitate collaborative travel planning and manage shared payments (split bill). " +
+      "The project is developed using [NextJS], [NestJS], [PrismaJS] and [MySQL]. ",
+    date: "September 2024",
+    techStack: ["NextJS", "NestJS", "PrimaJS", "MySQL"],
+    githubUrl: ["https://github.com/robert-wl/entre-project-fe", "https://github.com/robert-wl/entre-project-be"],
+    imageUrl: [
+      "/works/personal/splanngo/image-1.png",
+      "/works/personal/splanngo/image-2.png",
+      "/works/personal/splanngo/image-3.png",
+      "/works/personal/splanngo/image-4.png",
+    ],
+    isCollaborative: true,
+    isLive: false,
+  },
+  {
     title: "Verdant Seeds",
     description:
       "Verdant Seed is a tower defense and roguelike hybrid where players protect Yggdrasil, the World Tree, from relentless slime invasions. " +

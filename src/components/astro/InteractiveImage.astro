@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import imageReader from "../../utils/image-reader";
+import { cn } from "../../utils/class-name";
 interface Props {
   src: string;
   class?: string;
@@ -10,13 +11,15 @@ interface Props {
 }
 
 const { src = "", class: className, width, height, alt } = Astro.props;
+
+const image = imageReader(src)!;
 ---
 
 <Image
-  class={className}
+  class={cn(className, "cursor-pointer object-contain bg-black")}
   width={width}
   height={height}
-  src={imageReader(src)!}
+  src={image}
   alt={alt}
   onclick={`document.getElementById('fullscreen-dialog-${src}').showModal()`}
 />
@@ -26,8 +29,8 @@ const { src = "", class: className, width, height, alt } = Astro.props;
   onclick="this.close()"
   class="h-fit w-3/4 overflow-hidden">
   <Image
-    class="h-full w-full rounded-xl border-0 object-cover outline-0"
-    src={imageReader(src)!}
+    class="h-full max-h-[100vh] w-full rounded-xl border-0 bg-black object-contain outline-0"
+    src={image}
     alt={alt}
   />
 </dialog>
