@@ -103,30 +103,13 @@ export const personalWorksData: IProject[] = [
     isLive: true,
   },
   {
-    title: "SplanNGo",
-    description:
-      "SplanNGo is a website designed to facilitate collaborative travel planning and manage shared payments (split bill). " +
-      "The project is developed using [NextJS], [NestJS], [PrismaJS] and [MySQL]. ",
-    date: "September 2024",
-    techStack: ["NextJS", "NestJS", "PrimaJS", "MySQL"],
-    githubUrl: ["https://github.com/robert-wl/entre-project-fe", "https://github.com/robert-wl/entre-project-be"],
-    imageUrl: [
-      "/works/personal/splanngo/image-1.png",
-      "/works/personal/splanngo/image-2.png",
-      "/works/personal/splanngo/image-3.png",
-      "/works/personal/splanngo/image-4.png",
-    ],
-    isCollaborative: true,
-    isLive: false,
-  },
-  {
     title: "Verdant Seeds",
     description:
       "Verdant Seed is a tower defense and roguelike hybrid where players protect Yggdrasil, the World Tree, from relentless slime invasions. " +
       "Using magical plants grown from Yggdrasil's seeds, the goal is to hold out as long as possible and achieve the highest score." +
       "The project is developed using [Unity] and [C#] and is made for GameSeed 2024 Game Competition.",
     date: "March 2024",
-    techStack: ["Unity"],
+    techStack: ["Unity", "C#"],
     githubUrl: ["https://github.com/HPNV/GameSeed2024"],
     imageUrl: [
       "/works/personal/verdant-seed/image-1.png",
@@ -145,7 +128,7 @@ export const personalWorksData: IProject[] = [
       "The application uses [Python], in junction with [Mediapipe] and [Scikit Learn]. " +
       "The application itself uses [Tauri] along with [Svelte] for the frontend.",
     date: "June 2024",
-    techStack: ["Svelte", "Rust", "Tauri", "Python", "Mediapipe"],
+    techStack: ["Svelte", "Typescript", "Rust", "Tauri", "Python", "Mediapipe"],
     githubUrl: ["https://github.com/robert-wl/tauri-hand-gesture-recognition"],
     imageUrl: [
       "/works/personal/hand-sign-recognizer/image-1.png",
@@ -157,18 +140,50 @@ export const personalWorksData: IProject[] = [
     isLive: false,
   },
   {
+    title: "NOWLocate",
+    description: "A mobile application that helps users find their missing items. " + "The project is developed using [Kotlin] and [Firebase]. ",
+    date: "December 2023",
+    techStack: ["Kotlin", "Typescript", "Firebase"],
+    githubUrl: ["https://github.com/robert-wl/soft-eng-project"],
+    imageUrl: [
+      "/works/personal/nowlocate/image-1.png",
+      "/works/personal/nowlocate/image-2.png",
+      "/works/personal/nowlocate/image-3.png",
+      "/works/personal/nowlocate/image-4.png",
+    ],
+    isCollaborative: true,
+    isLive: false,
+  },
+  {
     title: "NutriFitPal",
     description:
       "A web-based application that is used to give recommendations for a user's diet based on their body mass index (BMI). The application uses [ReactJS] and [Firebase] as the database. " +
       "This project is developed in order to complete my Software Engineering course project.",
     date: "June 2024",
-    techStack: ["ReactJS", "Firebase"],
+    techStack: ["ReactJS", "Typescript", "Firebase"],
     githubUrl: ["https://github.com/robert-wl/soft-eng-project"],
     imageUrl: [
       "/works/personal/nutrifitpal/image-1.png",
       "/works/personal/nutrifitpal/image-2.png",
       "/works/personal/nutrifitpal/image-3.png",
       "/works/personal/nutrifitpal/image-4.png",
+    ],
+    isCollaborative: true,
+    isLive: false,
+  },
+  {
+    title: "SplanNGo",
+    description:
+      "SplanNGo is a website designed to facilitate collaborative travel planning and manage shared payments (split bill). " +
+      "The project is developed using [NextJS], [NestJS], [PrismaJS] and [MySQL]. ",
+    date: "September 2024",
+    techStack: ["NextJS", "NestJS", "Typescript", "PrimaJS", "MySQL"],
+    githubUrl: ["https://github.com/robert-wl/entre-project-fe", "https://github.com/robert-wl/entre-project-be"],
+    imageUrl: [
+      "/works/personal/splanngo/image-1.png",
+      "/works/personal/splanngo/image-2.png",
+      "/works/personal/splanngo/image-3.png",
+      "/works/personal/splanngo/image-4.png",
     ],
     isCollaborative: true,
     isLive: false,
@@ -192,7 +207,7 @@ export const personalWorksData: IProject[] = [
       "Users can use their camera to learn about the letters of the alphabet in American Sign Language. " +
       "The project is built using [ReactJS], [TensorflowJS], and [MediaPipe].",
     date: "January 2024",
-    techStack: ["ReactJS", "TensorflowJS", "MediaPipe"],
+    techStack: ["ReactJS", "Typescript", "Python", "TensorflowJS", "MediaPipe"],
     githubUrl: ["https://github.com/robert-wl/AIGestureMind"],
     imageUrl: ["/works/personal/gesture-mind/image-1.png", "/works/personal/gesture-mind/image-2.png"],
     isCollaborative: true,
