@@ -140,21 +140,6 @@ export const personalWorksData: IProject[] = [
     isLive: false,
   },
   {
-    title: "NOWLocate",
-    description: "A mobile application that helps users find their missing items. " + "The project is developed using [Kotlin] and [Firebase]. ",
-    date: "December 2023",
-    techStack: ["Kotlin", "Typescript", "Firebase"],
-    githubUrl: ["https://github.com/robert-wl/soft-eng-project"],
-    imageUrl: [
-      "/works/personal/nowlocate/image-1.png",
-      "/works/personal/nowlocate/image-2.png",
-      "/works/personal/nowlocate/image-3.png",
-      "/works/personal/nowlocate/image-4.png",
-    ],
-    isCollaborative: true,
-    isLive: false,
-  },
-  {
     title: "NutriFitPal",
     description:
       "A web-based application that is used to give recommendations for a user's diet based on their body mass index (BMI). The application uses [ReactJS] and [Firebase] as the database. " +
@@ -167,6 +152,34 @@ export const personalWorksData: IProject[] = [
       "/works/personal/nutrifitpal/image-2.png",
       "/works/personal/nutrifitpal/image-3.png",
       "/works/personal/nutrifitpal/image-4.png",
+    ],
+    isCollaborative: true,
+    isLive: false,
+  },
+  {
+    title: "JobSpace",
+    description:
+      "A web-based application that is used to help job seekers find job vacancies. " +
+      "The application also allows for job providers to post job vacancies. " +
+      "The project is developed entirely using [Laravel] and [MySQL].",
+    date: "June 2024",
+    techStack: ["Laravel", "PHP", "MySQL"],
+    githubUrl: ["https://github.com/BadAccuracyID/JobVerse-WebProg"],
+    imageUrl: ["/works/personal/jobspace/image-1.png", "/works/personal/jobspace/image-2.png", "/works/personal/jobspace/image-3.png"],
+    isCollaborative: true,
+    isLive: false,
+  },
+  {
+    title: "NOWLocate",
+    description: "A mobile application that helps users find their missing items. " + "The project is developed using [Kotlin] and [Firebase]. ",
+    date: "December 2023",
+    techStack: ["Kotlin", "Typescript", "Firebase"],
+    githubUrl: ["https://github.com/robert-wl/NOWLocate"],
+    imageUrl: [
+      "/works/personal/nowlocate/image-1.png",
+      "/works/personal/nowlocate/image-2.png",
+      "/works/personal/nowlocate/image-3.png",
+      "/works/personal/nowlocate/image-4.png",
     ],
     isCollaborative: true,
     isLive: false,
