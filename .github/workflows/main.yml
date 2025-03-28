@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -39,9 +41,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd portfolio
+            cd /opt/docker/robert-portfolio
+            git fetch
             git pull
-            docker compose -f docker-compose.server.yml pull
-            docker compose -f docker-compose.server.yml down
-            docker compose -f docker-compose.server.yml up -d
+            docker compose -f docker-compose.server.yml up -d --pull always
             docker image prune -f
