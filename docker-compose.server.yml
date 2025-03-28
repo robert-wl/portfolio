@@ -1,9 +1,9 @@
 services:
   portfolio:
     image: yahkerobertkertasnya/portfolio:latest
-    container_name: portfolio-wl
+    container_name: robert-portfolio
     tty: true
     build: .
     ports:
-      - "3993:4321"
+      - "4321:4321"
     restart: unless-stopped
