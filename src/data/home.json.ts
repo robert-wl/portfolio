@@ -2,8 +2,10 @@ const homeData = {
   greetings: "Hello, my name is",
   name: "Robert Wiliam",
   description: [
-    "Hi there! I’m Robert Wiliam, an undergraduate computer science student with interests in software development, artificial intelligence, devOps, and web technologies. I enjoy tackling challenging problems and building innovative solutions that make a difference.",
-    "I have had the opportunity to work on a variety of projects, where I’ve applied my skills in coding and problem-solving. I’m always eager to learn new technologies and improve my craft, whether it's through personal or professional projects.",
+    "I'm a passionate Full-Stack Engineer with a strong background in Software Engineering, DevOps, and Artificial Intelligence. \n" +
+      "I have years of experience working in the frontend and also backend development. The web applications that I have built and maintained has been used by thousands of users daily and thousand of users concurrently.\n" +
+      "I also have many experience working with database systems, including building and also maintaining relational databases. \n" +
+      "Linux System Administration is also one of my expertise as I used to implement automated CI/CD deployment systems and also other monitoring pipelines that has also been used in production.",
   ],
   expertise: [
     {
@@ -15,7 +17,7 @@ const homeData = {
     {
       title: "Back-End Development",
       description:
-        "I have experience in building backend services using [Go Lang], [NodeJS], and [.NET]. " +
+        "I have experience in building backend services using [Go Lang], [Spring], [NodeJS], and [.NET]. " +
         "I also have experience in working with relational databases such as [MySQL] and [PostgreSQL] and non-relational databases such as [Firebase].",
     },
     {
