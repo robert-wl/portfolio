@@ -2,8 +2,23 @@ import type { IExperience } from "../models/experience";
 
 const experienceData: IExperience[] = [
   {
+    title: "Backend Engineer",
+    date: "Feb 2025 - Present",
+    description: [
+      "Some of the tasks I perform as a backend engineer:",
+      "\n",
+      ":",
+      "- {Development of Backend Multi Services}: I developed backend services using [Spring Boot].",
+      "- {Development of CDC Pipelines}: I implemented data pipelines for Change Data Capture (CDC) to sync data from a relational database into Elasticsearch using [Debezium], [Kafka], and [Risingwave].",
+      "- {Development of Data Pipelines}: I designed and implemented a log ingestion pipeline using [Filebeat] to stream application logs into Elasticsearch, which significantly reduces the load on relational database and also improves log search speed and observability.",
+      "- {Maintaining and Improved Legacy Systems}: I maintained and improved legacy [PHP] systems. I also optimized a critical query, achieving a [37,500%] performance improvement by reducing execution time from 2 minutes to 300 milliseconds in one part of the application.",
+      ";",
+    ],
+    imageUrls: [],
+  },
+  {
     title: "Research and Development Staff",
-    date: "Feb 2024 - Present",
+    date: "Feb 2024 - Feb 2025",
     description: [
       "As a Research and Developmentt Staff at Software Laboratory Center, I am responsible for maintaining the web infrastructure for Software Laboratory Center and select parts of BINUS. " +
         "Some of the tasks I perform as a Research and Development Staff member include:",
