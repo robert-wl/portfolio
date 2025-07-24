@@ -6,13 +6,13 @@ import tailwind from "@astrojs/tailwind";
 
 import node from "@astrojs/node";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://robertwl.my.id",
   integrations: [react(), tailwind(), sitemap()],
   output: "server",
 
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: vercel(),
 });
