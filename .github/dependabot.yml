@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+    ignore:
+      - dependency-name: "astro"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
