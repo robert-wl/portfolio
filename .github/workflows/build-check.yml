@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   checkstyle:
-    name: Build Style Check
+    name: Build Check
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'dependabot[bot]' }}
     steps:
@@ -33,14 +33,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
-#      - name: ESLint
-#        uses: reviewdog/action-eslint@v1
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          reporter: github-pr-review
-#          eslint_flags: '--ext .js,.ts,.jsx,.tsx,.astro src/'
-#          fail_level: warning
 
       - name: Astro build check
         id: build
