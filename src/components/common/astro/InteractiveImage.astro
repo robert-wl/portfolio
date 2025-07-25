@@ -12,7 +12,7 @@ interface Props {
 
 const { src = "", class: className, width, height, alt } = Astro.props;
 
-const image = imageReader(src)!;
+const image = imageReader(src);
 ---
 
 <Image
