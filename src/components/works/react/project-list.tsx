@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect, useState } from "react";
-import { cn } from "../../utils/class-name.ts";
+import { cn } from "../../../utils/class-name.ts";
 
 interface IProps {
   personalProjects?: ReactNode;
