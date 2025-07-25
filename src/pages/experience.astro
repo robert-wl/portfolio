@@ -1,13 +1,13 @@
 ---
-import Navbar from "../components/astro/Navbar.astro";
+import Navbar from "../components/common/astro/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import SideContacts from "../components/astro/VerticalContacts.astro";
-import ExperienceStepper from "../components/astro/experience/ExperienceStepper.astro";
-import ExperienceStepperContent from "../components/astro/experience/ExperienceStepperContent.astro";
-import Footer from "../components/astro/Footer.astro";
+import SideContacts from "../components/common/astro/VerticalContacts.astro";
+import ExperienceStepper from "../components/experience/astro/ExperienceStepper.astro";
+import ExperienceStepperContent from "../components/experience/astro/ExperienceStepperContent.astro";
+import Footer from "../components/common/astro/Footer.astro";
 import experienceData from "../data/experience.json";
-import { StarsBackground } from "../components/react/aceternity/stars-background";
-import { ShootingStars } from "../components/react/aceternity/shooting-stars";
+import { StarsBackground } from "../components/common/react/stars-background";
+import { ShootingStars } from "../components/common/react/shooting-stars";
 ---
 
 <Layout title="Works Page">
@@ -18,7 +18,7 @@ import { ShootingStars } from "../components/react/aceternity/shooting-stars";
     <SideContacts />
     <div class="flex w-3/4 flex-col">
       <div class="flex flex-col gap-6">
-        <h1 class="pt-64 max-lg:pt-32 text-4xl max-lg:text-xl font-medium text-white">My Experience Over the Years</h1>
+        <h1 class="pt-64 text-4xl font-medium text-white max-lg:pt-32 max-lg:text-xl">My Experience Over the Years</h1>
       </div>
       <div class="py-16 max-lg:pt-2">
         <ExperienceStepper>
