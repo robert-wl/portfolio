@@ -4,15 +4,13 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
-import node from "@astrojs/node";
+import vercel from "@astrojs/vercel";
 
-// https://astro.build/config
+// https://astro.build/configg
 export default defineConfig({
   site: "https://robertwl.my.id",
   integrations: [react(), tailwind(), sitemap()],
   output: "server",
 
-  adapter: node({
-    mode: "standalone",
-  }),
+  adapter: vercel(),
 });
