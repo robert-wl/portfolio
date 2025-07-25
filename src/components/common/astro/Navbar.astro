@@ -1,17 +1,18 @@
 ---
 import { cn } from "../../../utils/class-name";
+import { getWebEndpoint } from "../../../config/web";
 const pages = [
   {
     name: "Home",
-    link: "/",
+    link: getWebEndpoint("home"),
   },
   {
     name: "Experience",
-    link: "/experience",
+    link: getWebEndpoint("experience"),
   },
   {
     name: "Works",
-    link: "/works",
+    link: getWebEndpoint("works"),
   },
 ];
 
