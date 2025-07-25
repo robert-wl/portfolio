@@ -29,7 +29,7 @@ export default function ProjectList({ personalProjects, professionalProjects }: 
 
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="pt-64 text-4xl font-medium text-white max-lg:pt-32 max-lg:text-xl">Works and Projects I've Done</h1>
+      <h1 className="pt-64 text-4xl font-medium text-white max-lg:pt-32 max-lg:text-xl">Works and Projects I&#39;ve Done</h1>
       <div className="flex gap-16 text-xl text-white max-lg:gap-8">
         <button
           className={cn(

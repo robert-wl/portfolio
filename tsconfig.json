@@ -5,8 +5,20 @@
     "jsxImportSource": "react",
     "baseUrl": ".",
     "paths": {
-      "@images": ["src/images/*"]
+      "@images": [
+        "src/images/*"
+      ]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    ".astro/types.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "public"
+  ]
 }
