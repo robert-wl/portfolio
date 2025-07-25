@@ -8,7 +8,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prettify": "prettier --write '**/*.{astro,mdx,js,jsx,ts,tsx,json,css,scss,html}'"
+    "prettify": "prettier --write '**/*.{astro,mdx,js,jsx,ts,tsx,json,css,scss,html}'",
+    "lint": "eslint . --ext .ts,.tsx,.astro --fix --config eslint.config.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
