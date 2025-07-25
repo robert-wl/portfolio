@@ -1,6 +1,4 @@
 ---
-import Navbar from "src/components/astro/Navbar.astro";
-import Footer from "src/components/astro/Footer.astro";
 import ArrowIcon from "../components/common/icons/astro/ArrowIcon.astro";
 import EmailIcon from "../components/common/icons/astro/EmailIcon.astro";
 import WhatsappIcon from "src/components/astro/icons/WhatsappIcon.astro";
@@ -15,6 +13,8 @@ import stringPreprocessor from "../utils/string-preprocessor";
 import { StarsBackground } from "../components/common/react/stars-background";
 import { ShootingStars } from "../components/common/react/shooting-stars";
 import imageReader from "../utils/image-reader";
+import Navbar from "src/components/common/astro/Navbar.astro";
+import Footer from "../components/common/astro/Footer.astro";
 
 const processedExpertise = homeData.expertise.map((e) => {
   const description = stringPreprocessor(e.description);
