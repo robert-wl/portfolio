@@ -1,4 +1,6 @@
 ---
+import Analytics from "@vercel/analytics/astro";
+
 interface Props {
   title: string;
 }
@@ -54,124 +56,128 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
+  <Analytics />
   <body class="relative h-full w-full bg-background">
     <slot />
   </body>
-</html>
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
+
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
     });
-  });
 
-  const elements = document.querySelectorAll("section");
-  elements.forEach((element) => observer.observe(element));
-</script>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-  }
+    const elements = document.querySelectorAll("section");
+    elements.forEach((element) => observer.observe(element));
+  </script>
 
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
-
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-
-  * {
-    font-family: "Inter", sans-serif;
-  }
-
-  @keyframes wiggle {
-    0% {
-      transform: translateX(0);
+  <style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
     }
-    50% {
-      transform: translateX(10px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
 
-  @keyframes bob-up-down {
-    0% {
-      transform: translateY(0);
+    html {
+      font-family: system-ui, sans-serif;
+      background: #13151a;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
-    50% {
-      transform: translateY(-10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
 
-  @keyframes fadeIn {
-    from {
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+
+    * {
+      font-family: "Inter", sans-serif;
+    }
+
+    @keyframes wiggle {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes bob-up-down {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    section {
       opacity: 0;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(10%);
     }
-    to {
-      opacity: 1;
+
+    .visible {
+      opacity: 100%;
+      transform: translateY(0%);
     }
-  }
 
-  section {
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-    transform: translateY(10%);
-  }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
 
-  .visible {
-    opacity: 100%;
-    transform: translateY(0%);
-  }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
 
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
+    ::-webkit-scrollbar-thumb {
+      background: #00adb4;
+      border-radius: 10px;
+    }
 
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #088395;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background: #00adb4;
-    border-radius: 10px;
-  }
+    ::backdrop {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: #088395;
-  }
+    dialog {
+      z-index: 1000;
+      transition: opacity 0.5s;
+    }
 
-  ::backdrop {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-
-  dialog {
-    z-index: 1000;
-    transition: opacity 0.5s;
-  }
-
-  dialog[open] {
-    animation: fadeIn 0.25s;
-  }
-</style>
+    dialog[open] {
+      animation: fadeIn 0.25s;
+    }
+  </style>
+</html>
