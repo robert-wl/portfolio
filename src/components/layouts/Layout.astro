@@ -58,9 +58,9 @@ const { title } = Astro.props;
   </head>
   <Analytics />
   <body class="relative h-full w-full bg-background">
+    <navbar></navbar>
     <slot />
   </body>
-
 
   <script>
     const observer = new IntersectionObserver((entries) => {
@@ -180,4 +180,5 @@ const { title } = Astro.props;
       animation: fadeIn 0.25s;
     }
   </style>
+
 </html>

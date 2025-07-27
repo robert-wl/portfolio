@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import expertImage from "src/images/dev-icon.png";
-import { cn } from "src/utils/class-name";
+import { cn } from "@/utils/class-name";
+import imageReader from "@/utils/image-reader";
 
 interface Props {
   title: string;
@@ -19,7 +19,7 @@ const { className, title } = Astro.props;
   <div class="flex items-center gap-4 max-lg:gap-2">
     <Image
       class="aspect-square w-16 rounded-full object-cover max-lg:w-8"
-      src={expertImage}
+      src={imageReader("/home/dev-icon.png")}
       alt="Temporary Image"
     />
     <span class="text-3xl font-semibold text-white max-lg:text-sm">

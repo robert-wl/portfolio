@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import imageReader from "../../../utils/image-reader";
-import { cn } from "../../../utils/class-name";
+import imageReader from "@/utils/image-reader";
+import { cn } from "@/utils/class-name";
 interface Props {
   src: string;
   class?: string;
@@ -12,7 +12,7 @@ interface Props {
 
 const { src = "", class: className, width, height, alt } = Astro.props;
 
-const image = imageReader(src)!;
+const image = imageReader(src);
 ---
 
 <Image

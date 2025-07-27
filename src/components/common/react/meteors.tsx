@@ -1,4 +1,4 @@
-import { cn } from "../../../utils/class-name.ts";
+import { cn } from "@/utils/class-name.ts";
 
 export const Meteors = ({ number, className }: { number?: number; className?: string }) => {
   const meteors: boolean[] = new Array(number || 20).fill(true);
