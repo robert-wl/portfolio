@@ -1,8 +1,8 @@
 ---
-import { cn } from "../../../utils/class-name";
-import { type IExperience } from "../../../models/experience";
-import stringPreprocessor from "../../../utils/string-preprocessor";
-import InteractiveImage from "../../common/astro/InteractiveImage.astro";
+import { cn } from "@/utils/class-name";
+import { type IExperience } from "@/models/experience";
+import stringPreprocessor from "@/utils/string-preprocessor";
+import InteractiveImage from "@/components/common/astro/InteractiveImage.astro";
 
 interface Props {
   isLast?: boolean;
@@ -21,7 +21,8 @@ const processedDescription = data.description.map(stringPreprocessor).join("");
   )}>
   <div class="flex items-start justify-start gap-8 py-6 max-lg:gap-2">
     <span
-      class="me-3 flex aspect-square h-12 min-h-12 w-12 min-w-12 items-center justify-center rounded-full border-[1.5px] border-primary bg-fill-primary bg-opacity-40 text-sm text-white max-lg:h-6 max-lg:min-h-6 max-lg:w-4 max-lg:min-w-6" />
+      class="me-3 flex aspect-square h-12 min-h-12 w-12 min-w-12 items-center justify-center rounded-full border-[1.5px] border-primary bg-fill-primary bg-opacity-40 text-sm text-white max-lg:h-6 max-lg:min-h-6 max-lg:w-4 max-lg:min-w-6"
+    ></span>
     <section class="flex flex-col gap-8 pb-8 pt-2 max-lg:gap-4 max-lg:pb-4 max-lg:pt-0">
       <header class="flex flex-col gap-2 max-lg:gap-1">
         <h2 class="text-2xl font-bold text-white max-lg:text-base">{data.date}</h2>

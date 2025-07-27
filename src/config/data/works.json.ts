@@ -1,4 +1,4 @@
-import type { IProject } from "../../models/project";
+import type { IProject } from "@/models/project";
 
 export const professionalWorksData: IProject[] = [
   {
